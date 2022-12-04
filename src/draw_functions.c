@@ -10,23 +10,3 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/cub3d.h"
-
-void	draw_square(t_data *data, int size, int pos_y, int pos_x, int color)
-{
-	int	y;
-	int	x;
-
-	x = pos_x;
-	y = pos_y;
-	while (y < pos_y + size)
-	{
-		while (x < pos_x + size)
-		{
-			my_mlx_pixel_put(data->img, x, y, color);
-			x++;
-		}
-		x = pos_x;
-		y++;
-	}
-}

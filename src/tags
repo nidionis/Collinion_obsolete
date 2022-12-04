@@ -9,10 +9,10 @@
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	5.9.0	/p5.9.20220828.0/
-check_keys_status	cub3d_render.c	/^void	check_keys_status(t_data *data)$/;"	f	typeref:typename:void
+check_keys_status	colinion_render.c	/^void	check_keys_status(t_data *data)$/;"	f	typeref:typename:void
 clean_exit	exit_ft.c	/^void	clean_exit(t_data *data, int exit_code)$/;"	f	typeref:typename:void
-cub3d_render	cub3d_render.c	/^int	cub3d_render(t_data *data)$/;"	f	typeref:typename:int
-draw_ceiling_floor_mandatory	cub3d_render.c	/^void	draw_ceiling_floor_mandatory(t_data *data)$/;"	f	typeref:typename:void
+colinion_render	colinion_render.c	/^int	colinion_render(t_data *data)$/;"	f	typeref:typename:int
+draw_ceiling_floor_mandatory	colinion_render.c	/^void	draw_ceiling_floor_mandatory(t_data *data)$/;"	f	typeref:typename:void
 draw_cube	draw_functions.c	/^void	draw_cube(t_data *data, int size, int pos_y, int pos_x, int color)$/;"	f	typeref:typename:void
 draw_line	draw_line.c	/^void	draw_line(t_data *data, t_point	*start, t_point	*end, int color)$/;"	f	typeref:typename:void
 draw_mini_map	draw_functions.c	/^void	draw_mini_map(t_data *data)$/;"	f	typeref:typename:void
@@ -34,7 +34,7 @@ ft_lstsize	ft_list.c	/^int	ft_lstsize(t_list *lst)$/;"	f	typeref:typename:int
 ft_matrixlen	matrix.c	/^int	ft_matrixlen(char **matrix)$/;"	f	typeref:typename:int
 ft_realloc_cat	get_next_line.c	/^static char	*ft_realloc_cat(char *line, char c, int *len)$/;"	f	typeref:typename:char *	file:
 get_next_line	get_next_line.c	/^char	*get_next_line(int fd)$/;"	f	typeref:typename:char *
-graphics_render	cub3d_render.c	/^int	graphics_render(t_data *data)$/;"	f	typeref:typename:int
+graphics_render	colinion_render.c	/^int	graphics_render(t_data *data)$/;"	f	typeref:typename:int
 init_key_status	key_event.c	/^void	init_key_status(t_data *data)$/;"	f	typeref:typename:void
 is_blank_char	str_ft.c	/^int	is_blank_char(char c)$/;"	f	typeref:typename:int
 is_blank_line	str_ft.c	/^int	is_blank_line(char *line)$/;"	f	typeref:typename:int
@@ -43,10 +43,10 @@ key_press	key_event.c	/^int	key_press(int key, t_data *data)$/;"	f	typeref:typen
 key_realese	key_event.c	/^int	key_realese(int key, t_data *data)$/;"	f	typeref:typename:int
 main	main.c	/^int	main(int argc, char *argv[])$/;"	f	typeref:typename:int
 malloc_data	main.c	/^ t_data	*malloc_data(void)$/;"	f	typeref:typename:t_data *
-my_mlx_pixel_put	draw_line.c	/^void            my_mlx_pixel_put(t_img_data *img, int x, int y, unsigned int color)$/;"	f	typeref:typename:void
+my_mlx_pixel_put	draw_line.c	/^void            my_mlx_pixel_put(t_image *img, int x, int y, unsigned int color)$/;"	f	typeref:typename:void
 pix_pos_to_map_case	map_ft.c	/^char	pix_pos_to_map_case(t_data *data, t_point absolute_pos)$/;"	f	typeref:typename:char
 pix_pos_to_map_pos	map_ft.c	/^t_point	pix_pos_to_map_pos(t_point absolute_pos)$/;"	f	typeref:typename:t_point
-render_map_2d	cub3d_render.c	/^int	render_map_2d(t_data *data)$/;"	f	typeref:typename:int
+render_map_2d	colinion_render.c	/^int	render_map_2d(t_data *data)$/;"	f	typeref:typename:int
 still_in_map	map_ft.c	/^int	still_in_map(t_data *data, t_point pt)$/;"	f	typeref:typename:int
 units_pos_to_minimap_pos	window_init.c	/^t_point	units_pos_to_minimap_pos(t_data *data, t_point absolute_position)$/;"	f	typeref:typename:t_point
 window_init	window_init.c	/^int	window_init(t_data *data)$/;"	f	typeref:typename:int

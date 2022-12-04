@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "colinion.h"
 
 int	ft_matrixlen(char **matrix)
 {
@@ -32,7 +32,7 @@ int	neighbourgh_count(int **matrix, t_point ind, int cell_search)
 
 	if (matrix[ind.y--][ind.x--] == cell_search)
 		nb--;
-	while (ind.y <= ind_cpy + 1)
+	while (ind.y <= ind_cpy.y + 1)
 	{
 		ind.x = ind_cpy.x - 1;
 		while (ind.x <= ind_cpy.x + 1)

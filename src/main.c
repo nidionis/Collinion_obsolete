@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "colinion.h"
 
  t_data	*malloc_data(void)
 {
@@ -19,25 +19,20 @@
 	data = malloc(sizeof(t_data));
 	if (!data)
 		clean_exit(data, -1);
+	data->render.pix_size = PIX_PER_SQUARE;
 	return (data);
 }
 
 int	main(int argc, char *argv[])
 {
+	(void)argc;
+	(void)argv;
 	t_data		*data;
-	data = NULL;
-	if (argc != 2)
-	{
-		error_msg("Needs a path to one file (only)");
-		clean_exit(data, -2);
-	}
-	else
-	{
-		data = malloc_data();
-		data->window = malloc(sizeof(t_window));
-		window_init(data);
-		parse_file(argv[1], data);
-		cub3d_render(data);
-		clean_exit(data, 0);
-	}
+	data = malloc_data();
+		if (!data)
+			exit(-1);
+	data->window = malloc(sizeof(t_window));
+	window_init(data);
+	graphic_loop(data);
+	clean_exit(data, 0);
 }

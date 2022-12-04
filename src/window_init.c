@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/cub3d.h"
+#include "../include/colinion.h"
 
 int	window_init(t_data *data)
 {
@@ -18,11 +18,11 @@ int	window_init(t_data *data)
 
 	window = data->window;
 	window->mlx = mlx_init();
-	data->img = malloc(sizeof(t_img_data));
-	data->img->img = mlx_new_image(window->mlx, SCREEN_WIDTH, SCREEN_HEIGHT);
+	//data->img = malloc(sizeof(t_image));
+	data->img.pointeur = mlx_new_image(window->mlx, SCREEN_WIDTH, SCREEN_HEIGHT);
 	window->init = mlx_new_window(window->mlx, \
 		SCREEN_WIDTH, SCREEN_HEIGHT, "colinion");
-	data->img->line_len = data->img->line_len >> 2;
-	data->img->adress = mlx_get_data_addr(data->img->img,&data->img->bpp, &data->img->line_len, &data->img->endian);
+	//data->img->line_len = data->img->line_len >> 2;
+	data->img.address = mlx_get_data_addr(data->img.pointeur,&data->img.bpp, &data->img.line_len, &data->img.endian);
 	return (0);
 }
