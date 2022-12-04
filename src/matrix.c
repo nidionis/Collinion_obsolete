@@ -1,43 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   matrix.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: suplayerko <suplayerko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 15:17:56 by suplayerko          #+#    #+#             */
-/*   Updated: 2022/12/01 18:48:48 by supersko         ###   ########.fr       */
+/*   Updated: 2022/10/26 16:24:32 by suplayerko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
- t_data	*malloc_data(void)
+int	ft_matrixlen(char **matrix)
 {
-	t_data	*data;
+	int	len;
 
-	data = malloc(sizeof(t_data));
-	if (!data)
-		clean_exit(data, -1);
-	return (data);
+	len = 0;
+	if (matrix)
+	{
+		while (matrix[len])
+			len++;
+	}
+	return (len);
 }
 
-int	main(int argc, char *argv[])
+int	neighbourgh_count(int **matrix, t_point ind, int cell_search)
 {
-	t_data		*data;
-	data = NULL;
-	if (argc != 2)
+	int	nb = 0;
+	t_point	ind_cpy = ind;
+
+	if (matrix[ind.y--][ind.x--] == cell_search)
+		nb--;
+	while (ind.y <= ind_cpy + 1)
 	{
-		error_msg("Needs a path to one file (only)");
-		clean_exit(data, -2);
+		ind.x = ind_cpy.x - 1;
+		while (ind.x <= ind_cpy.x + 1)
+		{
+			if (matrix[ind.y][ind.x++] == cell_search)
+				nb++;
+		}
+		ind.y++;
 	}
-	else
-	{
-		data = malloc_data();
-		data->window = malloc(sizeof(t_window));
-		window_init(data);
-		parse_file(argv[1], data);
-		cub3d_render(data);
-		clean_exit(data, 0);
-	}
+	return (nb);
 }

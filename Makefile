@@ -12,16 +12,16 @@ SOURCES  := $(wildcard $(SRCDIR)/*.c)
 INCLUDES := $(wildcard $(SRCDIR)/*.h)
 OBJECTS  := $(SOURCES:$(SRCDIR)/%.c=$(OBJDIR)/%.o)
 
-NAME		= colinion
+NAME		= cub3D
 OBJ			= $(SRC:.c=.o)
 LIBFT_DIR 	= libft
-PROJECT_H	= include/colinion.h $(LIBFT_DIR)/libft.h
+PROJECT_H	= include/cub3d.h $(LIBFT_DIR)/libft.h
 CC			= gcc
 LINKER   	= gcc
 CFLAGS		= -Wall -Wextra -Werror -g3
 LIBFT 		= $(LIBFT_DIR)/libft.a
 
-ifeq ($(DESKTOP_SESSION), ubuntu)
+ifeq ($(DESKTOP_SESSION), qtile)
 MINILIBX = minilibx_linux
 MLXFLAGS = -I /usr/X11/include -g -Lminilibx_linux -L /usr/lib -Iminilibx_linux -lmlx -lXext -lX11 -lm
 else
