@@ -54,12 +54,12 @@ NO	include/structures.h	/^enum e_matrix_sides { FALSE, NO, SO, EA, WE };$/;"	e	e
 OBJ	minilibx_linux/Makefile	/^OBJ	= $(addprefix $(OBJ_DIR)\/,$(SRC:%.c=%.o))$/;"	m
 OBJ_DIR	minilibx_linux/Makefile	/^OBJ_DIR = obj$/;"	m
 OLIVE	include/colors.h	/^#define OLIVE	/;"	d
-PIX_PER_SQUARE	include/colinion.h	/^# define PIX_PER_SQUARE /;"	d
+PIX_PER_SQUARE	include/cell_config.h	/^# define PIX_PER_SQUARE /;"	d
 PURPLE	include/colors.h	/^#define PURPLE	/;"	d
 RED	include/colors.h	/^#define RED	/;"	d
 RETURN	minilibx_linux/mlx_xpm.c	/^#define	RETURN	/;"	d	file:
-SCREEN_HEIGHT	include/colinion.h	/^# define SCREEN_HEIGHT /;"	d
-SCREEN_WIDTH	include/colinion.h	/^# define SCREEN_WIDTH /;"	d
+SCREEN_HEIGHT	include/cell_config.h	/^# define SCREEN_HEIGHT /;"	d
+SCREEN_WIDTH	include/cell_config.h	/^# define SCREEN_WIDTH /;"	d
 SILVER	include/colors.h	/^#define SILVER	/;"	d
 SO	include/structures.h	/^enum e_matrix_sides { FALSE, NO, SO, EA, WE };$/;"	e	enum:e_matrix_sides
 SRC	minilibx_linux/Makefile	/^SRC	= mlx_init.c mlx_new_window.c mlx_pixel_put.c mlx_loop.c \\$/;"	m
@@ -67,7 +67,7 @@ TEAL	include/colors.h	/^#define TEAL	/;"	d
 TOMATO	include/colors.h	/^#define TOMATO	/;"	d
 UNAME	minilibx_linux/Makefile	/^UNAME = $(shell uname)$/;"	m
 W	include/structures.h	/^enum e_matrix_size { H, W };$/;"	e	enum:e_matrix_size
-WALL	include/colinion.h	/^# define WALL /;"	d
+WALL	include/cell_config.h	/^# define WALL /;"	d
 WARN_SHM_ATTACH	minilibx_linux/mlx_int.h	/^# define WARN_SHM_ATTACH /;"	d
 WE	include/structures.h	/^enum e_matrix_sides { FALSE, NO, SO, EA, WE };$/;"	e	enum:e_matrix_sides
 WHITE	include/colors.h	/^#define WHITE	/;"	d
@@ -88,6 +88,7 @@ cmap	minilibx_linux/mlx_int.h	/^	Colormap	cmap;$/;"	m	struct:s_xvar	typeref:type
 col	minilibx_linux/mlx_int.h	/^	int		col;$/;"	m	struct:s_xpm_col	typeref:typename:int
 color	minilibx_linux/mlx_int.h	/^	int		color;$/;"	m	struct:s_col_name	typeref:typename:int
 colors	include/structures.h	/^	unsigned int	*colors;$/;"	m	struct:s_render	typeref:typename:unsigned int *
+convert_line_to_cell_line	src/main.c	/^int	*convert_line_to_cell_line(t_data *data, char *line)$/;"	f	typeref:typename:int *
 data	minilibx_linux/mlx_int.h	/^	char			*data;$/;"	m	struct:s_img	typeref:typename:char *
 dead	include/cell_config.h	/^enum blabla {alive, dead, NB_TYPES};$/;"	e	enum:blabla
 decrgb	minilibx_linux/mlx_int.h	/^	int			decrgb[6];$/;"	m	struct:s_xvar	typeref:typename:int[6]
@@ -105,9 +106,11 @@ exit_msg	src/exit_ft.c	/^void	exit_msg(t_data *data, char *msg, int ret_exit)$/;
 expose_hook	minilibx_linux/mlx_int.h	/^	int					(*expose_hook)();$/;"	m	struct:s_win_list	typeref:typename:int (*)()
 expose_param	minilibx_linux/mlx_int.h	/^	void				*expose_param;$/;"	m	struct:s_win_list	typeref:typename:void *
 format	minilibx_linux/mlx_int.h	/^	int				format;$/;"	m	struct:s_img	typeref:typename:int
-ft_matrixlen	src/matrix.c	/^int	ft_matrixlen(char **matrix)$/;"	f	typeref:typename:int
+ft_append_tab	src/main.c	/^char	**ft_append_tab(int **matrix, int *cell_line)$/;"	f	typeref:typename:char **
+ft_realloc_cat	src/get_next_line.c	/^char	*ft_realloc_cat(char *line, char c, int *len)$/;"	f	typeref:typename:char *
 gc	minilibx_linux/mlx_int.h	/^	GC					gc;$/;"	m	struct:s_win_list	typeref:typename:GC
 gc	minilibx_linux/mlx_int.h	/^	GC				gc;$/;"	m	struct:s_img	typeref:typename:GC
+get_next_line	src/get_next_line.c	/^char	*get_next_line(int fd)$/;"	f	typeref:typename:char *
 graphic_loop	src/render.c	/^int	graphic_loop(t_data *data)$/;"	f	typeref:typename:int
 height	include/structures.h	/^	int	height;$/;"	m	struct:s_window	typeref:typename:int
 height	minilibx_linux/mlx_int.h	/^	int				height;$/;"	m	struct:s_img	typeref:typename:int
@@ -115,10 +118,12 @@ hook	minilibx_linux/mlx_int.h	/^	int		(*hook)();$/;"	m	struct:s_event_list	typer
 hooks	minilibx_linux/mlx_int.h	/^	t_event_list		hooks[MLX_MAX_EVENT];$/;"	m	struct:s_win_list	typeref:typename:t_event_list[]
 image	minilibx_linux/mlx_int.h	/^	XImage			*image;$/;"	m	struct:s_img	typeref:typename:XImage *
 img	include/structures.h	/^	t_image		img;$/;"	m	struct:s_data	typeref:typename:t_image
+import_matrix	src/main.c	/^void	import_matrix(t_data *data, char *file_name)$/;"	f	typeref:typename:void
 init	include/structures.h	/^	void	*init;$/;"	m	struct:s_window	typeref:typename:void *
 init_colors	src/MY_ALGO.c	/^void	init_colors(t_render *render)$/;"	f	typeref:typename:void
 init_matrix	src/main.c	/^void	init_matrix(t_data *data, char *argv[])$/;"	f	typeref:typename:void
-init_matrix_size	src/main.c	/^void	init_matrix_size(t_data *data)$/;"	f	typeref:typename:void
+init_matrix_size_from_macros	src/main.c	/^void	init_matrix_size_from_macros(t_data *data)$/;"	f	typeref:typename:void
+init_matrix_size_post_import	src/main.c	/^void	init_matrix_size_post_import(t_data *data, int width)$/;"	f	typeref:typename:void
 init_point	src/render.c	/^t_point	init_point(int y, int x)$/;"	f	typeref:typename:t_point
 is_border	src/main.c	/^int	is_border(t_data *data, t_point i)$/;"	f	typeref:typename:int
 key_hook	minilibx_linux/mlx_int.h	/^	int					(*key_hook)();$/;"	m	struct:s_win_list	typeref:typename:int (*)()
@@ -132,6 +137,7 @@ malloc_matrix	src/main.c	/^int	**malloc_matrix(t_data *data)$/;"	f	typeref:typen
 mask	minilibx_linux/mlx_int.h	/^	int		mask;$/;"	m	struct:s_event_list	typeref:typename:int
 matrix	include/structures.h	/^	int		**matrix;$/;"	m	struct:s_data	typeref:typename:int **
 matrix_size	include/structures.h	/^	int		matrix_size[2];$/;"	m	struct:s_data	typeref:typename:int[2]
+matrixlen	src/matrix.c	/^int	matrixlen(int **matrix)$/;"	f	typeref:typename:int
 mlx	include/structures.h	/^	void	*mlx;$/;"	m	struct:s_window	typeref:typename:void *
 mlx_X_error	minilibx_linux/mlx_new_image.c	/^int	mlx_X_error;$/;"	v	typeref:typename:int
 mlx_clear_window	minilibx_linux/mlx_clear_window.c	/^int		mlx_clear_window(t_xvar *xvar,t_win_list *win)$/;"	f	typeref:typename:int
@@ -213,7 +219,7 @@ param	minilibx_linux/mlx_int.h	/^	void	*param;$/;"	m	struct:s_event_list	typeref
 pix	minilibx_linux/mlx_int.h	/^	Pixmap			pix;$/;"	m	struct:s_img	typeref:typename:Pixmap
 pix_size	include/structures.h	/^	int		pix_size;$/;"	m	struct:s_render	typeref:typename:int
 pointeur	include/structures.h	/^	void 	*pointeur;$/;"	m	struct:s_image	typeref:typename:void *
-print_matrix	src/render.c	/^void	print_matrix(int **matrix)$/;"	f	typeref:typename:void
+print_matrix	src/render.c	/^void	print_matrix(int **matrix, int HEIGHT, int WIDTH)$/;"	f	typeref:typename:void
 private_cmap	minilibx_linux/mlx_int.h	/^	int			private_cmap;$/;"	m	struct:s_xvar	typeref:typename:int
 pshm_format	minilibx_linux/mlx_int.h	/^	int			pshm_format;$/;"	m	struct:s_xvar	typeref:typename:int
 random_matrix	src/main.c	/^void	random_matrix(t_data *data)$/;"	f	typeref:typename:void

@@ -1,0 +1,7 @@
+src/render.c:	mlx_put_image_to_window(data->window->mlx, data->window->init, data->img.pointeur, 0, 0);
+src/render.c:	mlx_loop_hook(data->window->mlx, refresh_image, data);
+src/render.c:	//mlx_hook(data->window->init, 17, 1L << 17, &exit_game, data);
+src/render.c:	mlx_loop(data->window->mlx);
+src/window_init.c:	window->mlx = mlx_init();
+src/window_init.c:	data->img.pointeur = mlx_new_image(window->mlx, window->heigh, size[W]);
+src/window_init.c:	window->init = mlx_new_window(window->mlx, \

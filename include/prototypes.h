@@ -15,6 +15,8 @@ int	apply_rule(int **matrix, t_point ind);
 /* utils */
 void	clean_exit(t_data *data, int exit_code);
 void	exit_msg(t_data *data, char *msg, int ret_exit);
+char	*get_next_line(int fd);
+int	matrixlen(int **matrix);
 
 /* debug */
 void	print_matrix(int **matrix, int HEIGHT, int WIDTH);

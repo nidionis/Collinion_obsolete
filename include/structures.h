@@ -11,8 +11,7 @@ typedef struct s_window
 {
 	void	*mlx;
 	void	*init;
-	int	width;
-	int	height;
+	int	size[2];
 }	t_window;
 
 typedef struct s_image

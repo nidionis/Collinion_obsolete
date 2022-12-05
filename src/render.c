@@ -68,7 +68,7 @@ void	print_matrix(int **matrix, int HEIGHT, int WIDTH)
 
 void	draw_matrix(t_data *data)
 {
-	t_point	i_matrix = init_point(1, 1);
+	t_point	i_matrix;
 	int	**matrix = data->matrix;
 	int	cell;
 	int	color;
@@ -90,6 +90,7 @@ int	refresh_image(t_data *data)
 	//refresh_matrix(data, apply_rule);
 	draw_matrix(data);
 	usleep(1000000);
+	//print_matrix(data->matrix, data->matrix_size[H], data->matrix_size[W]);
 	mlx_put_image_to_window(data->window->mlx, data->window->init, data->img.pointeur, 0, 0);
 	return (0);
 }

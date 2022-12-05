@@ -2,10 +2,6 @@
 # define COLINION_H
 
 //MACROS 
-# define SCREEN_WIDTH 220
-# define SCREEN_HEIGHT 222
-/* should be eaual to windows width*/
-# define PIX_PER_SQUARE 30
 
 # define CELL "matrix[ind.y][ind.x]"
 # define CELL_UP "matrix[ind.y - 1][ind.x]"
@@ -17,7 +13,6 @@
 # define CELL_DOWN_RIGTH "matrix[ind.y + 1][ind.x + 1]"
 # define CELL_DOWN_LEFT "matrix[ind.y + 1][ind.x - 1]"
 
-# define WALL -1
 
 # include <stdlib.h>
 # include "structures.h"
@@ -30,6 +25,7 @@
 # include <fcntl.h>
 # include <stdio.h> // test
 # include <time.h>
+# include <string.h>
 # include <stdint.h>
 # include "cell_config.h"
 #endif

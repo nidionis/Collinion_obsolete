@@ -12,7 +12,7 @@
 
 #include "colinion.h"
 
-int	ft_matrixlen(char **matrix)
+int	matrixlen(int **matrix)
 {
 	int	len;
 
@@ -28,19 +28,16 @@ int	ft_matrixlen(char **matrix)
 int	neighbourgh_count(int **matrix, t_point ind, int cell_search)
 {
 	int	nb = 0;
-	t_point	ind_cpy = ind;
 
-	if (matrix[ind.y--][ind.x--] == cell_search)
-		nb--;
-	while (ind.y <= ind_cpy.y + 1)
+	for (int y = ind.y - 1; y <= ind.y + 1; y++)
 	{
-		ind.x = ind_cpy.x - 1;
-		while (ind.x <= ind_cpy.x + 1)
+		for (int x = ind.x - 1; x <= ind.x + 1; x++)
 		{
-			if (matrix[ind.y][ind.x++] == cell_search)
+			if (x == ind.x && y == ind.y)
+				continue ; // this is the cell itself
+			else if (matrix[y][x] == cell_search)
 				nb++;
 		}
-		ind.y++;
 	}
 	return (nb);
 }

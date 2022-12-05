@@ -3,24 +3,31 @@
 void	init_colors(t_render *render)
 {
 	render->colors = malloc(sizeof(int) * NB_TYPES);
-	render->colors[0] = WHITE;
-	render->colors[1] = BLACK;
+	render->colors[0] = RED;
+	render->colors[1] = BLUE;
 }
 
 int	apply_prime_rule(int **matrix, t_point ind )
 {
-	//int n;
-	int	new_cell = matrix[ind.y][ind.x];
-	switch (matrix[ind.y][ind.x]) {
+	int n;
+	int	cell;
+	int	new_cell;
+
+	cell = matrix[ind.y][ind.x];
+	new_cell = cell;
+	switch (cell) {
 		case alive:
-			//n = neighbourgh_count(matrix, ind, alive);
-			//if (n < 3 || n > 4)
-				new_cell = dead;
+			n = neighbourgh_count(matrix, ind, alive);
+			if (n < 3 || n > 4)
+				new_cell = (int)dead;
 			break ;
 		case dead:
-			//n = neighbourgh_count(matrix, ind, alive);
-			//if (n == 3)
-				new_cell = alive;
+			n = neighbourgh_count(matrix, ind, alive);
+			if (n == 3)
+				new_cell = (int)alive;
+			break ;
+		default:
+			new_cell = cell; //matrix[ind.y][ind.x];
 			break ;
 	}
 	return (new_cell);
