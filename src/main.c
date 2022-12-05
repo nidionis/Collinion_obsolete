@@ -134,7 +134,7 @@ int	*convert_line_to_cell_line(t_data *data, char *line)
 	i = 0;
 	while(line[i])
 	{
-		cell_line[i] = (int)line[i];
+		cell_line[i] = (int)(line[i] - '0');
 		i++;
 	}
 	return cell_line;
@@ -180,7 +180,9 @@ void	import_matrix(t_data *data, char *file_name)
 					", 1);
 		cell_line = convert_line_to_cell_line(data, line);
 		matrix = ft_append_tab(matrix, cell_line);
+		line = get_next_line(fd);
 	}
+	data->matrix = matrix;
 	init_matrix_size_post_import(data, width);
 	data->tmp_matrix = malloc_matrix(data);
 	return ;

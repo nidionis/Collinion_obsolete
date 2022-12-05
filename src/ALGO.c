@@ -18,7 +18,7 @@ int	apply_prime_rule(int **matrix, t_point ind )
 	switch (cell) {
 		case alive:
 			n = neighbourgh_count(matrix, ind, alive);
-			if (n < 3 || n > 4)
+			if (n < 2 || n > 3)
 				new_cell = (int)dead;
 			break ;
 		case dead:

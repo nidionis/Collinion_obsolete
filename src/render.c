@@ -23,6 +23,7 @@ t_point	init_point(int y, int x)
 
 void	refresh_matrix(t_data *data, int (*f)(int **, t_point))
 {
+	int	**tmp;
 	int 	**matrix = data->matrix;
 	int 	**new_matrix = data->tmp_matrix;
 
@@ -33,7 +34,9 @@ void	refresh_matrix(t_data *data, int (*f)(int **, t_point))
 			new_matrix[y][x] = (*f)(matrix, init_point(y, x));
 		}
 	}
+	tmp = matrix;
 	data->matrix = new_matrix;
+	data->tmp_matrix = tmp;
 }
 
 void	draw_pixel(t_data *data, t_point p, unsigned int color)
@@ -88,17 +91,40 @@ int	refresh_image(t_data *data)
 {
 	refresh_matrix(data, apply_prime_rule);
 	//refresh_matrix(data, apply_rule);
+	//print_matrix(data->matrix, data->matrix_size[H], data->matrix_size[W]);
 	draw_matrix(data);
-	usleep(1000000);
+	usleep(100000);
 	//print_matrix(data->matrix, data->matrix_size[H], data->matrix_size[W]);
 	mlx_put_image_to_window(data->window->mlx, data->window->init, data->img.pointeur, 0, 0);
 	return (0);
 }
 
+int	quit(t_data *data)
+{
+	clean_exit(data, 0);
+	return 0;
+}
+
+int	manage_keystroke(int keystroke, void *param)
+{
+	t_data	*data = (t_data *)param;
+	printf("keystroke %d\n", keystroke);	
+	if (keystroke == ECHAP)
+	{
+		mlx_destroy_window(data->window->mlx, data->window->init);
+		clean_exit(data, 0);
+	}
+	return (keystroke);
+}
+
 int	graphic_loop(t_data *data)
 {
+	//mlx_hook(data->window->mlx, 2, 1L<<0, manage_keystroke, data);
 	mlx_loop_hook(data->window->mlx, refresh_image, data);
+	mlx_key_hook(data->window->init, manage_keystroke, data);
 	//mlx_hook(data->window->init, 17, 1L << 17, &exit_game, data);
+	//mlx_hook(data->window->mlx, ON_DESTROY, 1L<<0, quit, data);
+	//mlx_mouse_hook(data->window->mlx, manage_expose, data);
 	mlx_loop(data->window->mlx);
 	return (0);
 }

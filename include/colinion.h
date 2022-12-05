@@ -2,6 +2,7 @@
 # define COLINION_H
 
 //MACROS 
+#  define ECHAP 	65307 //echap
 
 # define CELL "matrix[ind.y][ind.x]"
 # define CELL_UP "matrix[ind.y - 1][ind.x]"
