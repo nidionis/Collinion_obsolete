@@ -18,7 +18,7 @@ int	window_init(t_data *data)
 
 	window = data->window;
 	window->mlx = mlx_init();
-	//data->img = malloc(sizeof(t_image));
+	//r data->img = malloc(sizeof(t_image));
 	data->img.pointeur = mlx_new_image(window->mlx, SCREEN_WIDTH, SCREEN_HEIGHT);
 	window->init = mlx_new_window(window->mlx, \
 		SCREEN_WIDTH, SCREEN_HEIGHT, "colinion");

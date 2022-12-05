@@ -1,6 +1,11 @@
 #include <colinion.h>
-enum blabla { alive, dead, NB_TYPES};
 
+void	init_colors(t_render *render)
+{
+	render->colors = malloc(sizeof(int) * NB_TYPES);
+	render->colors[0] = WHITE;
+	render->colors[1] = BLACK;
+}
 
 int	apply_prime_rule(int **matrix, t_point ind )
 {

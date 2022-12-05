@@ -41,3 +41,4 @@ typedef struct s_data
 }	t_data;
 
 enum e_matrix_size { H, W };
+enum e_matrix_sides { FALSE, NO, SO, EA, WE };
