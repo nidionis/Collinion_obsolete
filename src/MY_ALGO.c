@@ -9,18 +9,19 @@ void	init_colors(t_render *render)
 
 int	apply_prime_rule(int **matrix, t_point ind )
 {
-	int n;
+	//int n;
 	int	new_cell = matrix[ind.y][ind.x];
 	switch (matrix[ind.y][ind.x]) {
 		case alive:
-			n = neighbourgh_count(matrix, ind, alive);
-			if (n < 3 || n > 4)
+			//n = neighbourgh_count(matrix, ind, alive);
+			//if (n < 3 || n > 4)
 				new_cell = dead;
 			break ;
 		case dead:
-			n = neighbourgh_count(matrix, ind, alive);
-			if (n == 3)
+			//n = neighbourgh_count(matrix, ind, alive);
+			//if (n == 3)
 				new_cell = alive;
+			break ;
 	}
 	return (new_cell);
 }

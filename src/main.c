@@ -30,9 +30,9 @@ int	is_border(t_data *data, t_point i)
 		is_true = WE;
 	else if	(i.y == 0)
 		is_true = NO;
-	else if (i.x == data->matrix_size[W])
+	else if (i.x == data->matrix_size[W] - 1)
 		is_true = EA;
-	else if (i.y == data->matrix_size[H])
+	else if (i.y == data->matrix_size[H] - 1)
 		is_true = SO;
 	else
 		is_true = FALSE;
@@ -103,7 +103,7 @@ int	main(int argc, char *argv[])
 	data = malloc_data();
 	init_matrix(data, argv);
 	init_colors(&data->render);
-	//print_matrix(data->matrix, data->matrix_size[H], data->matrix_size[W]);
+	print_matrix(data->matrix, data->matrix_size[H], data->matrix_size[W]);
 	data->window = malloc(sizeof(t_window));
 	window_init(data);
 	graphic_loop(data);

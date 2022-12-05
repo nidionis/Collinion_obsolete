@@ -25,15 +25,13 @@ void	refresh_matrix(t_data *data, int (*f)(int **, t_point))
 {
 	int 	**matrix = data->matrix;
 	int 	**new_matrix = data->tmp_matrix;
-	t_point	index = init_point(1, 1);
 
-	while (index.y < data->matrix_size[H] - 1)
+	for (int y = 1; y < data->matrix_size[H] - 1; y++)
 	{
-		while (index.x < data->matrix_size[W] - 1)
+		for (int x = 1; x < data->matrix_size[W] - 1; x++)
 		{
-			new_matrix[index.y][index.x] = (*f)(matrix, index);
+			new_matrix[y][x] = (*f)(matrix, init_point(y, x));
 		}
-		index.y++;
 	}
 	data->matrix = new_matrix;
 }
@@ -56,9 +54,9 @@ void	print_matrix(int **matrix, int HEIGHT, int WIDTH)
 	int	cell;
 
 	printf("   ###################################   \n");
-	for (i_matrix.y = 1; i_matrix.y < HEIGHT; i_matrix.y++)
+	for (i_matrix.y = 1; i_matrix.y < HEIGHT - 1; i_matrix.y++)
 	{
-		for (i_matrix.x = 1; i_matrix.x < WIDTH; i_matrix.x++)
+		for (i_matrix.x = 1; i_matrix.x < WIDTH - 1; i_matrix.x++)
 		{
 			cell = matrix[i_matrix.y][i_matrix.x];
 			printf("|%d", cell);
@@ -75,9 +73,9 @@ void	draw_matrix(t_data *data)
 	int	cell;
 	int	color;
 
-	for (i_matrix.y = 1; i_matrix.y < data->matrix_size[H]; i_matrix.y++)
+	for (i_matrix.y = 1; i_matrix.y < data->matrix_size[H] - 1; i_matrix.y++)
 	{
-		for (i_matrix.x = 1; i_matrix.x < data->matrix_size[W]; i_matrix.x++)
+		for (i_matrix.x = 1; i_matrix.x < data->matrix_size[W] - 1; i_matrix.x++)
 		{
 			cell = matrix[i_matrix.y][i_matrix.x];
 			color = data->render.colors[cell];
@@ -88,9 +86,10 @@ void	draw_matrix(t_data *data)
 
 int	refresh_image(t_data *data)
 {
-	//refresh_matrix(data, apply_prime_rule);
+	refresh_matrix(data, apply_prime_rule);
 	//refresh_matrix(data, apply_rule);
 	draw_matrix(data);
+	usleep(1000000);
 	mlx_put_image_to_window(data->window->mlx, data->window->init, data->img.pointeur, 0, 0);
 	return (0);
 }
