@@ -93,8 +93,7 @@ int	refresh_image(t_data *data)
 	//refresh_matrix(data, apply_rule);
 	//print_matrix(data->matrix, data->matrix_size[H], data->matrix_size[W]);
 	draw_matrix(data);
-	usleep(100000);
-	//print_matrix(data->matrix, data->matrix_size[H], data->matrix_size[W]);
+	usleep(1000 * SLEEP_TIME);
 	mlx_put_image_to_window(data->window->mlx, data->window->init, data->img.pointeur, 0, 0);
 	return (0);
 }
@@ -119,12 +118,8 @@ int	manage_keystroke(int keystroke, void *param)
 
 int	graphic_loop(t_data *data)
 {
-	//mlx_hook(data->window->mlx, 2, 1L<<0, manage_keystroke, data);
 	mlx_loop_hook(data->window->mlx, refresh_image, data);
 	mlx_key_hook(data->window->init, manage_keystroke, data);
-	//mlx_hook(data->window->init, 17, 1L << 17, &exit_game, data);
-	//mlx_hook(data->window->mlx, ON_DESTROY, 1L<<0, quit, data);
-	//mlx_mouse_hook(data->window->mlx, manage_expose, data);
 	mlx_loop(data->window->mlx);
 	return (0);
 }

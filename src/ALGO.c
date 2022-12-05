@@ -3,8 +3,8 @@
 void	init_colors(t_render *render)
 {
 	render->colors = malloc(sizeof(int) * NB_TYPES);
-	render->colors[0] = RED;
-	render->colors[1] = BLUE;
+	render->colors[alive] = BLACK;
+	render->colors[dead] = YELLOW;
 }
 
 int	apply_prime_rule(int **matrix, t_point ind )

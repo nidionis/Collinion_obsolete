@@ -28,6 +28,6 @@
 # include <time.h>
 # include <string.h>
 # include <stdint.h>
-# include "cell_config.h"
+# include "config.h"
 #endif
 
