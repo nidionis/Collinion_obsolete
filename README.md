@@ -1,10 +1,8 @@
 # colinion
-a cellular automaton/simulator
-(same concept of the game of life)
+a cellular automaton/simulator generator
+(ex: of the game of life)
 
-Implementing gravity was a cool idea for artistic work
-
-algo experimented on libreoffice by Dimitri Collignon,
+Inspired by Dimitri Collignon,
 Here some of his (musical) work:
   - KanDi
     https://www.youtube.com/watch?v=dtM9G354OAw
@@ -17,8 +15,23 @@ Here some of his (musical) work:
 
   - Own Blow
     https://www.youtube.com/channel/UCsQjYpATXG1AHtzDS2i60Gg
-    
-HOW TO USE:
-  - size the page height with 31 cells.
-  - use the page break to get the next picture.
-  -> press super quickly the page break to get an animation.
+
+download:
+git clone git@github.com:presk0/colinion.git
+
+go directory:
+cd colinion 
+
+compile:
+make
+
+try it:
+./colinion
+
+using a text file as a map:
+./colinion map.txt
+
+Feel free to modify the ALGO.c file to create your own (src folder)
+Cells type must be initialised in config.h (include folder)
+
+ENJOY

@@ -5,16 +5,26 @@ SET_COLORS
 	CELL_COLOR[dead] = BLACK;
 END
 
+/* implement a gravity */
 PRIME_ALGO
+default:
+	if (CELL_UP == alive) {
+		NEW_CELL = alive;
+	}
+	else if (CELL == alive && CELL_DOWN == dead) {
+		NEW_CELL = dead;
+	}
+	break ;
+END_ALGO
+
+ALGO
 case alive:
-	if (COUNT alive AROUND < 2 || COUNT alive AROUND > 3)
-	{
+	if (NB_AROUND(alive) < 2 || NB_AROUND(alive) > 3) {
 		NEW_CELL = dead;
 	}
 	break ;
 case dead:
-	if (COUNT alive AROUND == 3)
-	{
+	if (NB_AROUND(alive) == 3) {
 		NEW_CELL = alive;
 	}
 	break ;

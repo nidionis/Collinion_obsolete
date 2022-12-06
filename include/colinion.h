@@ -60,6 +60,7 @@
 	NEW_CELL = cell;\
 	switch (CELL) {
 
+#define NB_AROUND(TOKEN) neighbourgh_count(matrix, ind, TOKEN)
 
 #define COUNT neighbourgh_count(matrix, ind, 
 #define AROUND )

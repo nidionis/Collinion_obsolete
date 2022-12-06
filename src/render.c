@@ -90,7 +90,7 @@ void	draw_matrix(t_data *data)
 int	refresh_image(t_data *data)
 {
 	refresh_matrix(data, apply_prime_rule);
-	//refresh_matrix(data, apply_rule);
+	refresh_matrix(data, apply_rule);
 	//print_matrix(data->matrix, data->matrix_size[H], data->matrix_size[W]);
 	draw_matrix(data);
 	usleep(1000 * SLEEP_TIME);
