@@ -1,4 +1,4 @@
-# colinion
+# collinion
 a cellular automaton/simulator generator
 (ex: of the game of life)
 
@@ -17,19 +17,19 @@ Here some of his (musical) work:
     https://www.youtube.com/channel/UCsQjYpATXG1AHtzDS2i60Gg
 
 download:
-git clone git@github.com:presk0/colinion.git
+git clone git@github.com:presk0/collinion.git
 
 go directory:
-cd colinion 
+cd collinion 
 
 compile:
 make
 
 try it:
-./colinion
+./collinion
 
 using a text file as a map:
-./colinion map.txt
+./collinion map.txt
 
 Feel free to modify the ALGO.c file to create your own (src folder)
 Cells type must be initialised in config.h (include folder)
