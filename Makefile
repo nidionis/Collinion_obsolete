@@ -5,11 +5,11 @@ SOURCES  := $(wildcard $(SRCDIR)/*.c)
 INCLUDES := $(wildcard $(SRCDIR)/*.h)
 OBJECTS  := $(SOURCES:$(SRCDIR)/%.c=$(OBJDIR)/%.o)
 
-NAME		= colinion
+NAME		= collinion
 OBJ		= $(SRC:.c=.o)
 MINILIBX_DIR	= minilibx_linux
 MLX_H		= $(MINILIBX_DIR)/mlx.h $(MINILIBX_DIR)/int_mlx.h
-PROJECT_H	= include/colinion.h
+PROJECT_H	= include/collinion.h
 PROJECT_H	+= $(MLX_H)
 CC		= gcc
 LINKER   	= gcc
