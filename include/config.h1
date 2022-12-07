@@ -10,9 +10,11 @@
 
 enum WRITE_YOUR_CELLS_TYPE_BELOW {
 /* The first have value 0, the second is 1 and so on */
-	healthy,
-	ill, // there, ill = 2
-	infected,
+	cloud,
+       	sky,
+	earth,
+	plant,
+	water,
 	NB_TYPES // leave this line
 }; 
 

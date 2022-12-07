@@ -1,4 +1,10 @@
-#include "colinion.h"
+#include "collinion.h"
+
+int	quit(t_data *data)
+{
+	clean_exit(data, 0);
+	return 0;
+}
 
 /* where all pointers are cleaned, especially in a emergency exit */
 void	clean_exit(t_data *data, int exit_code)

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/colinion.h"
+#include "../include/collinion.h"
 
 int	window_init(t_data *data)
 {
@@ -21,7 +21,7 @@ int	window_init(t_data *data)
 	//r data->img = malloc(sizeof(t_image));
 	data->img.pointeur = mlx_new_image(window->mlx, window->size[W], window->size[H]);
 	window->init = mlx_new_window(window->mlx, \
-		window->size[W], window->size[H], "colinion");
+		window->size[W], window->size[H], "collinion");
 	//data->img->line_len = data->img->line_len >> 2;
 	data->img.address = mlx_get_data_addr(data->img.pointeur,&data->img.bpp, &data->img.line_len, &data->img.endian);
 	return (0);

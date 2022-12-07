@@ -1,4 +1,4 @@
-#include <colinion.h>
+#include <collinion.h>
 
 typedef struct s_point
 {
@@ -41,3 +41,5 @@ typedef struct s_data
 
 enum e_matrix_size { H, W };
 enum e_matrix_sides { FALSE, NO, SO, EA, WE };
+enum e_cell_sides { SIDE_UP, SIDE_DOWN, SIDE_LEFT, SIDE_RIGHT };
+

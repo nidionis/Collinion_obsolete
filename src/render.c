@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   colinion_render.c                                     :+:      :+:    :+:   */
+/*   collinion_render.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpaulino <dpaulino@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/colinion.h"
+#include "../include/collinion.h"
 
 t_point	init_point(int y, int x)
 {
@@ -81,7 +81,10 @@ void	draw_matrix(t_data *data)
 		for (i_matrix.x = 1; i_matrix.x < data->matrix_size[W] - 1; i_matrix.x++)
 		{
 			cell = matrix[i_matrix.y][i_matrix.x];
-			color = data->render.colors[cell];
+			if (cell < NB_TYPES)
+				color = data->render.colors[cell];
+			else
+				color = data->render.colors[NB_TYPES];
 			draw_pixel(data, i_matrix, color);
 		}
 	}
@@ -96,12 +99,6 @@ int	refresh_image(t_data *data)
 	usleep(1000 * SLEEP_TIME);
 	mlx_put_image_to_window(data->window->mlx, data->window->init, data->img.pointeur, 0, 0);
 	return (0);
-}
-
-int	quit(t_data *data)
-{
-	clean_exit(data, 0);
-	return 0;
 }
 
 int	manage_keystroke(int keystroke, void *param)
