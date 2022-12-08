@@ -1,15 +1,18 @@
 SRCDIR   = src
 OBJDIR   = obj
+INCLUDEDIR   = include
+GAMEFOLDER = game
 
 SOURCES  := $(wildcard $(SRCDIR)/*.c)
-INCLUDES := $(wildcard $(SRCDIR)/*.h)
+INCLUDES := $(wildcard $(INCLUDEDIR)/*.h)
 OBJECTS  := $(SOURCES:$(SRCDIR)/%.c=$(OBJDIR)/%.o)
 
 NAME		= collinion
+
 OBJ		= $(SRC:.c=.o)
 MINILIBX_DIR	= minilibx_linux
 MLX_H		= $(MINILIBX_DIR)/mlx.h $(MINILIBX_DIR)/int_mlx.h
-PROJECT_H	= include/collinion.h
+PROJECT_H	= $(INCLUDEDIR)/collinion.h
 PROJECT_H	+= $(MLX_H)
 CC		= gcc
 LINKER   	= gcc
@@ -24,15 +27,15 @@ $(NAME): $(OBJECTS) maker
 	$(CC) $(OBJECTS) $(CFLAGS) ${MLXFLAGS} ./$(MINILIBX)/libmlx.a -o $(NAME) 
 
 $(OBJECTS): $(OBJDIR)/%.o : $(SRCDIR)/%.c
-	mkdir -p $(OBJDIR)
-	$(CC) $(CFLAGS) -I/usr/include -I./include -I$(MINILIBX) -O0 -c $< -o $@
+	@mkdir -p $(OBJDIR)
+	@$(CC) $(CFLAGS) -I/usr/include -I./$(INCLUDEDIR) -I$(MINILIBX) -O0 -c $< -o $@
 
 maker:
-	make -C ./$(MINILIBX)
+	@make -C ./$(MINILIBX)
 
 algo:
 	@rm -rf $(OBJDIR)
-	make
+	@make
 
 clean:
 	@make -C ./$(MINILIBX) clean

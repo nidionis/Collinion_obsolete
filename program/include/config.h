@@ -7,14 +7,3 @@
 # define WALL (-1) 
 /* time waiting between each frames */
 # define SLEEP_TIME 	0
-
-enum WRITE_YOUR_CELLS_TYPE_BELOW {
-/* The first have value 0, the second is 1 and so on */
-	cloud,
-       	sky,
-	earth,
-	plant,
-	water,
-	NB_TYPES // leave this line
-}; 
-

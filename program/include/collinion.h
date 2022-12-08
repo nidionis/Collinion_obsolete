@@ -19,6 +19,8 @@
 # include "structures.h"
 # include "prototypes.h"
 # include "colors.h"
+# include "config.h"
+# include "cell_types.h"
 # include "mlx.h"
 # include <unistd.h>
 # include <math.h>
@@ -28,7 +30,6 @@
 # include <time.h>
 # include <string.h>
 # include <stdint.h>
-# include "config.h"
 
 /*   CHEAT MACRO	 */
 #define CELL_COLOR render->colors
