@@ -4,7 +4,6 @@
 
 DEFINE_TYPE:	healthy
 DEFINE_TYPE:	ill
-DEFINE_TYPE:	NB_TYPES
 /*
 https://www.hermetic
       //

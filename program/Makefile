@@ -34,6 +34,7 @@ maker:
 	@make -C ./$(MINILIBX)
 
 algo:
+	@rm -rf $(NAME)
 	@rm -rf $(OBJDIR)
 	@make
 

@@ -1,12 +1,13 @@
 #!/usr/bin/bash
-PROGRAM_FOLDER="$HOME/collinion/program"
-ALGO_FILE=$PWD/$1
+MAIN_FOLDER="$HOME/collinion"
+PROGRAM_FOLDER="$MAIN_FOLDER/program"
+ALGO_FILE="$PWD/$1"
 FORMATED_ALGO="$PROGRAM_FOLDER/src/ALGO.c"
 CELL_TYPE_FILE="$PROGRAM_FOLDER/include/cell_types.h"
 
 # format the line starting by DEFINE_TYPE and put it in the file
 if [[ -f ${ALGO_FILE} ]] ; then
-	grep DEFINE_TYPE ${ALGO_FILE} | cut -d:  -f2-100 |  awk 'BEGIN {print "#include <collinion.h>\nenum cell_types {"} {print "\t",$0,","} END { print "};" }' > ${CELL_TYPE_FILE}
+	grep DEFINE_TYPE ${ALGO_FILE} | cut -d:  -f2-100 |  awk 'BEGIN {print "#include <collinion.h>\nenum cell_types {"} {print "\t",$0,","} END { print "NB_TYPES };" }' > ${CELL_TYPE_FILE}
 
 	sed 's/.*DEFINE_TYPE.*//' ${ALGO_FILE} > ${FORMATED_ALGO}
 else
@@ -14,6 +15,7 @@ else
 	exit 1
 fi
 
-make -C $(PROGRAM_FOLDER) algo
+make -C ${PROGRAM_FOLDER} algo
+mv "$PROGRAM_FOLDER/collinion" .
 ./collinion
 exit 0
