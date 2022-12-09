@@ -1,6 +1,7 @@
 # collinion
+
 a cellular automaton/simulator generator
-(ex: of the game of life)
+Make your own fancy game of life
 
 Inspired by Dimitri Collignon,
 Here some of his (musical) work:
@@ -16,22 +17,23 @@ Here some of his (musical) work:
   - Own Blow
     https://www.youtube.com/channel/UCsQjYpATXG1AHtzDS2i60Gg
 
+"run_collinion" is a shell script formating, compiling and executing the algo you wrote.
+
 download:
-git clone git@github.com:presk0/collinion.git
+    git clone git@github.com:presk0/collinion.git
 
 go directory:
-cd collinion 
+    cd collinion 
 
 compile:
-make
+    make
 
 try it:
-./collinion
+    ./run_collinion game_of_life.c
 
-using a text file as a map:
-./collinion map.txt
+note: give up with your mouse and quit the window with ESC
 
-Feel free to modify the ALGO.c file to create your own (src folder)
-Cells type must be initialised in config.h (include folder)
+
+Check the folder "tuto" if you want to discover more.
 
 ENJOY

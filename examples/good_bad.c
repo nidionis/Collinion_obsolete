@@ -2,9 +2,9 @@
 #include <collinion.h>
 
 
-DEFINE_TYPE:	good
-DEFINE_TYPE:	bad
-DEFINE_TYPE:	empty
+DECLARE_TYPE:	good
+DECLARE_TYPE:	bad
+DECLARE_TYPE:	empty
 
 SET_COLORS
 	CELL_COLOR[good] = WHITE;

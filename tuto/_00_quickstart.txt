@@ -45,12 +45,65 @@ There is 3 main parths in a collinion file:
 	- the algo[s]
 
 	#################################
+
 DECLARING A TYPE:
 Just write (or copy/paste)
-	DEFINE_TYPE: <a_type> ; (the type must finish by ";")
+	DECLARE_TYPE: <a_type> ; (the type must finish by ";")
 
 	note: the actual value of a type will be
 		0 for the first
 		1 for the second
 		and so on ...
+	
+	Let's create a new type !
+	(for example copy/paste: DECLARE_TYPE: zombie ; )
+
+	#################################
+
+SETTING THE COLORS:
+
+beetween the tags SET_COLORS and END, you MUST attribute a color to any cell you declared using:
+
+	CELL_COLOR[ <cell_type> ] = <the_color> ;
+						^
+			       don't forget the ';'
+
+Note:
+	- check the config.h file, it contains the already trributed colors and you can create your own
+	- you can replace a cell_type, or the color directly with the corresponding number
+	- you can attribute the same color to several cells
+
+	Let's attribute a color to our new cell !
+	(my zombie will be green:  CELL_COLOR[zombie] = GREEN;  )
+
+	#################################
+
+QUICK START WITH THE ALGO:
+
+The matrix is parse with your algo, creating a new matrix (the cells are not modified "in place")
+
+The algo is appled to each CELL in the matrix, and a NEW_CELL will be returned to the new matrix at the same position.
+
+If the CELL does not correspond to any rule, NEW_CELL is equal to CELL
+
+We are using a C syntax (https://www.w3schools.com/c/c_conditions.php)
+
+Basicly, it works that way:
+
+	if ( condition ) { action } ;
+
+We can use:
+	>	 >=	<	<=
+	== (equal)	! (not null)
+	&& (AND)	|| (OR)
+
+We will learn much more in the next tutorial, for now we can play around just by guessing.
+
+Between "default:" and "break;" feel free to modify the rules and don't forget : you declared a new type :)
+
+ex try:
+	- if CELL is alive and there is more zombies around,
+		the cell become a zombie
+	- if the cell is a zombie and there is more alives around
+		the cell become a zombie
 

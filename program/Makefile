@@ -28,7 +28,7 @@ $(NAME): $(OBJECTS) maker
 
 $(OBJECTS): $(OBJDIR)/%.o : $(SRCDIR)/%.c
 	@mkdir -p $(OBJDIR)
-	@$(CC) $(CFLAGS) -I/usr/include -I./$(INCLUDEDIR) -I$(MINILIBX) -O0 -c $< -o $@
+	@$(CC) $(CFLAGS) -I/usr/include -I.. -I./$(INCLUDEDIR) -I$(MINILIBX) -O0 -c $< -o $@
 
 maker:
 	@make -C ./$(MINILIBX)

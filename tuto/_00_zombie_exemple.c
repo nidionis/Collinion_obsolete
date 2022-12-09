@@ -1,8 +1,8 @@
 #include <collinion.h>
 
-
-
-
+DECLARE_TYPE:	dead   ;
+DECLARE_TYPE:	alive;
+DECLARE_TYPE:	zombie ;
 
 SET_COLORS
 	CELL_COLOR[alive] = WHITE;

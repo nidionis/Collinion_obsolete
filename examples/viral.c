@@ -1,8 +1,8 @@
 
 #include <collinion.h>
 
-DEFINE_TYPE:	healthy;
-DEFINE_TYPE:	ill;
+DECLARE_TYPE:	healthy;
+DECLARE_TYPE:	ill;
 /*
 https://www.hermetic
       //
