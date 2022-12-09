@@ -1,0 +1,56 @@
+Welcome to collinion universe
+
+I guess you can't wait for a try, you can execute a file using "./" in front of it
+try in  terminal: 
+	./run_collinion
+
+But run_collinion is waiting for one (or two) argument !
+Try and enjoy:
+	./run_collinion game_of_life.c
+
+	|+| NoOb_n0te:
+	|+| From a terminal check where you are using "pwd"
+	|+| change your directory using "cd"
+	|+| list the directory using "ls"
+	|+| ex:
+	|+| > pwd
+	|+| 	/home/my_home
+	|+| > ls
+	|+| 	collinion  Desktop  Downloads 
+	|+| > cd collinion
+	|+| > pwd
+	|+| 	/home/my_home/collinion
+	|+| > ls
+	|+| 	examples	README.md	tuto
+	|+| 	game_of_life.c	program		run_collinion
+	|+| then ./run_collinion game_of_life.c should work
+	|+| 
+	|+| At least, use a graphical interface,
+	|*| jump in the collinion folder
+	|*| click->right select "open in teminal" and finally:
+	|*| 	./run_collinion game_of_life.c
+
+Waaaaaaaa, beautyfull isn'it ?
+run_collinion use the algo written in the .c file (in C syntaxe) and execute any algo you can create !
+
+Let's check this file 
+you can use any text editor as gedit, nano, vim...
+write:
+	gedit game_of_life
+	(or right-click and open with gedit)
+
+There is 3 main parths in a collinion file:
+	- the cell declaration
+	- the color setting
+	- the algo[s]
+
+	#################################
+DECLARING A TYPE:
+Just write (or copy/paste)
+	DEFINE_TYPE: <a_type> ; (the type must finish by ";")
+
+	note: the actual value of a type will be
+		0 for the first
+		1 for the second
+		and so on ...
+

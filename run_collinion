@@ -1,21 +1,37 @@
 #!/usr/bin/bash
+
+USAGE_MSG="Usage: $0 <your_algo_file> [ map_file ]"
+
+if [[ -z $1 ]] ; then
+	echo ${USAGE_MSG}
+	exit 0
+fi
+
+ALGO_FILE="$PWD/$1"
+MAP_FILE="$PWD/$2"
 MAIN_FOLDER="$HOME/collinion"
 PROGRAM_FOLDER="$MAIN_FOLDER/program"
-ALGO_FILE="$PWD/$1"
 FORMATED_ALGO="$PROGRAM_FOLDER/src/ALGO.c"
 CELL_TYPE_FILE="$PROGRAM_FOLDER/include/cell_types.h"
 
-# format the line starting by DEFINE_TYPE and put it in the file
 if [[ -f ${ALGO_FILE} ]] ; then
-	grep DEFINE_TYPE ${ALGO_FILE} | cut -d:  -f2-100 |  awk 'BEGIN {print "#include <collinion.h>\nenum cell_types {"} {print "\t",$0,","} END { print "NB_TYPES };" }' > ${CELL_TYPE_FILE}
-
+	# format the line starting by DEFINE_TYPE
+	# and put it in the cell_types.h file (in includes folder) 
+	grep 'DEFINE_TYPE' ${ALGO_FILE} | cut -d:  -f2-100 | sed "s/;/,/" |  awk 'BEGIN {print "#include <collinion.h>\nenum cell_types {"} {print "\t",$0} END { print "NB_TYPES };" }' > ${CELL_TYPE_FILE}
+	# Format the file and save it in src
 	sed 's/.*DEFINE_TYPE.*//' ${ALGO_FILE} > ${FORMATED_ALGO}
 else
-	echo "[$0] .algo file not found"
+	echo ${USAGE_MSG}
 	exit 1
 fi
 
 make -C ${PROGRAM_FOLDER} algo
-mv "$PROGRAM_FOLDER/collinion" .
-./collinion
+mv ${PROGRAM_FOLDER}/collinion .
+if [[ -n $2 && -f $2 ]] ; then
+	./collinion $2
+else
+	./collinion
+fi
+rm collinion
+
 exit 0

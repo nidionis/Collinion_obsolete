@@ -20,7 +20,7 @@ switch(CELL) {
 			NEW_CELL = rand() % 2;
 		break ;
 	default:
-		if (NB_AROUND(bad) >= 2)
+		if (NB_AROUND(bad) > 5)
 			NEW_CELL = empty;
 }
 END_ALGO

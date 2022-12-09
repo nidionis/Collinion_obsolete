@@ -36,7 +36,7 @@ maker:
 algo:
 	@rm -rf $(NAME)
 	@rm -rf $(OBJDIR)
-	@make
+	make
 
 clean:
 	@make -C ./$(MINILIBX) clean
