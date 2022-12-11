@@ -1,0 +1,20 @@
+Now you grown up, and you should know something:
+"switch" is more powerfull than you think, and we were using only the default statement but we should write:
+
+switch(CELL) {
+        case (cell_type1):
+		[ actions1 ] ;
+                break;
+        case (cell_type2):
+		[ actions2 ] ;
+                break;
+	default:
+		[ actions3 ] ;
+		break;
+}
+
+DO NOT FORGET TO "break ;" AT THE END OF EACH CASE
+
+You don't need to verify if 'CELL == cell_type' every time and your code will be lighter
+
+Try to modify your game of life if you like ;)

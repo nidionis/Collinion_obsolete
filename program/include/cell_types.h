@@ -1,6 +1,5 @@
 #include <collinion.h>
 enum cell_types {
-	 	dead   ,
+	 	dead,
 	 	alive,
-	 	zombie ,
 NB_TYPES };

@@ -1,0 +1,88 @@
+Collonion is powerfull thanks to some basic keywords we can use in the algo, there is 3 mains types :
+	- C key words:
+		switch, if, else, default, case, break, int, float...
+		you can use any C-builtin words in collinion
+	- collinions relative cells
+		CELL, NEW_CELL, ...
+	- collinions functions
+		The upper-case words accepting an argument like
+		NB_AROUND(), ...
+
+You can check the cheatsheet if you have any doubt
+
+Let's learn one new thing for each type :
+
+	#################################
+
+	- C key words:
+
+	"else" is very usefull for flexible condition:
+
+	if (condition) {
+		action1 ;
+	} else {		=> no condition needed
+		action2 ;
+	}
+
+	you can use it followed by "if":
+
+	if (condition1) {
+		action1 ;
+	} else if (condition2) {
+		action1 ;
+	}
+
+	and even :
+	
+	if (condition1) {
+		action1 ;
+	} else if (condition2) {
+		action1 ;
+	}
+		[ ... ]
+
+	} else if (condition_n) {
+		action_n ;
+	} else {
+		a_last_action
+	}
+
+	Be carefull: at first "true" condition, the program will skip all the others ! When you need to avoid that, just keep going with if statements (without else)
+
+	#################################
+
+RELATIVE CELLS:
+	as you guessed CELL represent the cell_type parsed and NEW_CELL is the cell type returned, but for fanciers algo, it's possible to use
+	CELL_UP
+	CELL_UP_LEFT
+	CELL_UP_RIGHT
+	CELL_RIGHT
+	CELL_LEFT
+	CELL_DOWN
+	CELL_DOWN_LEFT
+	CELL_DOWN_RIGHT
+
+with && (AND) and || (OR) statement, imagine the conditions you could make !
+
+An other cool keyword is WALL which is -1 by default (a useless value) surrounding the matrix.
+In our game of life, if you want all the cells up alive, you could just write:
+	if (CELL_UP == WALL) {
+		NEW_CELL = alive ;
+	} else if ....
+
+	#################################
+
+COLLINIONS FUNCIONS :
+NB_ADOUND(cell_type) returns the number of cell type around, but you can be more selective using
+	NB_SIDE_UP(cell_type)
+	NB_SIDE_DOWN(cell_type)
+	NB_SIDE_LEFT(cell_type)
+	NB_SIDE_RIGHT(cell_type)
+I'm shure you guessed what they are doing !
+a clue : the number returned is between 0 and 3 :)
+
+A last function for debuging:
+PRINT("message")
+it prints ON THE TERMINAL the message you want (quoted) when it's met.
+
+Try some new games with you new superpowers !

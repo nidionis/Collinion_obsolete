@@ -63,8 +63,8 @@ int	side_count(int **matrix, t_point ind, int cell_search, int side)
 			i_inc = ind.y - 1;
 			break ;
 		case SIDE_RIGHT:
-			i_fix = ind.x - 1;
-			i_inc = ind.y + 1;
+			i_fix = ind.x + 1;
+			i_inc = ind.y - 1;
 			break ;
 	}
 	max = i_inc + 3;

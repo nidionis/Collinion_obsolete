@@ -4,6 +4,8 @@ I guess you can't wait for a try, you can execute a file using "./" in front of 
 try in  terminal: 
 	./run_collinion
 
+	----------------------------------------------------------
+
 But run_collinion is waiting for one (or two) argument !
 Try and enjoy:
 	./run_collinion game_of_life.c
@@ -30,16 +32,21 @@ Try and enjoy:
 	|*| click->right select "open in teminal" and finally:
 	|*| 	./run_collinion game_of_life.c
 
-Waaaaaaaa, beautyfull isn'it ?
-run_collinion use the algo written in the .c file (in C syntaxe) and execute any algo you can create !
+	----------------------------------------------------------
 
-Let's check this file 
+run_collinion use the algo written in the .c file (in pseudo-C syntaxe) and execute any algo you can create !
+
+Let's check "game_of_life.c" file
 you can use any text editor as gedit, nano, vim...
 write:
-	gedit game_of_life
+	gedit game_of_life.c
 	(or right-click and open with gedit)
 
-There is 3 main parths in a collinion file:
+	----------------------------------------------------------
+
+Every words after // or between /* and */ are comments (never executes)
+
+There is 3 main parts in a collinion file:
 	- the cell declaration
 	- the color setting
 	- the algo[s]
@@ -62,14 +69,14 @@ Just write (or copy/paste)
 
 SETTING THE COLORS:
 
-beetween the tags SET_COLORS and END, you MUST attribute a color to any cell you declared using:
+Between the tags SET_COLORS and END, you MUST attribute a color to any cell you declared using:
 
 	CELL_COLOR[ <cell_type> ] = <the_color> ;
 						^
 			       don't forget the ';'
 
 Note:
-	- check the config.h file, it contains the already trributed colors and you can create your own
+	- check the config.h file, it contains the already atributed colors and you can create your own
 	- you can replace a cell_type, or the color directly with the corresponding number
 	- you can attribute the same color to several cells
 
@@ -93,8 +100,9 @@ Basicly, it works that way:
 	if ( condition ) { action } ;
 
 We can use:
-	>	 >=	<	<=
-	== (equal)	! (not null)
+	>  (GREATER)	>= (GREATER OR EQUAL)
+	<  (LOWER)	<= (LOWER OR EQUAL)
+	== (EQUAL)	! (NOT NULL)
 	&& (AND)	|| (OR)
 
 We will learn much more in the next tutorial, for now we can play around just by guessing.
@@ -105,5 +113,5 @@ ex try:
 	- if CELL is alive and there is more zombies around,
 		the cell become a zombie
 	- if the cell is a zombie and there is more alives around
-		the cell become a zombie
+		the zombie is killed
 

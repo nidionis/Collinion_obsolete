@@ -1,0 +1,15 @@
+collinion is in C syntax, and like any programming language, you can use varibles as memory.
+
+There is several types, and we should use only integers, and floats sometime.
+
+Variables must be declared between "ALGO" and the switch(), 
+That permits a more flexible code and can save some calculation if your conde is too heavy:
+instead of calculate every time NB_AROUND(alive) for each statement, we can save it in a variable and reuse it !
+
+int	< var_name > ;
+	=> declare an integer (0, 1, 2 ... up to 2147483647)
+float	< var_name > ;
+	=> declare a float (0.1, 99999.66666 ...)
+
+feel free to use them and discover a new game_of_life syntax in example/_05_var_and_switch.c
+

@@ -1,0 +1,26 @@
+cheat sheet:
+
+For each cell:
+ -----------------------------------------------------------------------
+|	CELL_UP_LEFT	|	CELL_UP		|	CELL_UP_RIGHT	|
+|-----------------------------------------------------------------------
+|	CELL_LEFT	|	CELL		|	CELL_UP_RIGHT	|
+|-----------------------------------------------------------------------
+|	CELL_DOWN_LEFT	|	CELL_DOWN	|	CELL_DOWN_RIGHT	|
+ -----------------------------------------------------------------------
+
+NEW_CELL = value returned to the refreshed matrix
+WALL = value surrounding the matrix, it never change (default -1)
+
+collinion function:
+NB_AROUND(cell_type) = return the number of cell_type around (CELL is exclude)
+
+NB_SIDE_UP(cell_type) 	= return the number of cell_type for the 3 cells up
+NB_SIDE_DOWN(cell_type) = return the number of cell_type for the 3 cells down
+NB_SIDE_LEFT(cell_type) = return the number of cell_type for the 3 cells left
+NB_SIDE_RIGHT(cell_type)= return the number of cell_type for the 3 cells right
+PRINT(message)		= print a message (surrounded by quotes "")
+			  usefull for debugging
+DEFAULT_COLOR		= must be used in color's setting:
+			  CELL_COLLOR[DEFAULT_COLOR] = <a_color>;
+			  usefull using undeclared types

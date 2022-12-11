@@ -4,12 +4,12 @@
 # define SCREEN_HEIGHT 	600
 
 /* higher it is, lower is the quality*/
-# define PIX_PER_SQUARE 2
+# define PIX_PER_SQUARE 5
 
 /* Surrounding value (random map only) */
 # define WALL (-1) 
 
-/* time waiting between each frames */
+/* time waiting between each frames in milliseconds */
 # define SLEEP_TIME 	100
 
 /* COLORS are defined using RGB (Red Green Blue) in hexadecimal
