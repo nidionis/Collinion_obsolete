@@ -16,9 +16,10 @@ CELL_TYPE_FILE="$PROGRAM_FOLDER/include/cell_types.h"
 
 if [[ -f ${ALGO_FILE} ]] ; then
 	# format the line starting by DECLARE_TYPE
-	# and put it in the cell_types.h file (in includes folder) 
+	# and put it in the include/cell_types.h
 	grep 'DECLARE_TYPE' ${ALGO_FILE} | cut -d:  -f2-100 | sed "s/;/,/" |  awk 'BEGIN {print "#include <collinion.h>\nenum cell_types {"} {print "\t",$0} END { print "NB_TYPES };" }' > ${CELL_TYPE_FILE}
-	# Format the file and save it in src
+
+	# Format the file and save it in src/ALGO.c
 	sed 's/.*DECLARE_TYPE.*//' ${ALGO_FILE} > ${FORMATED_ALGO}
 else
 	echo ${USAGE_MSG}
