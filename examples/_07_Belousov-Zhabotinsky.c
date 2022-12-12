@@ -1,4 +1,3 @@
-
 #include <collinion.h>
 
 DECLARE_TYPE:	healthy;
@@ -21,12 +20,16 @@ END
 PRIME_ALGO
 	int a;
 	int b;
-	int k1 = 3;
+	int k1 = 5;
 	int k2 = 3;
-	int g =  2;
+	int g =  4;
 	int s = k1 + k2 + CELL;
 	a = 0;
-	for (int i = ill +1 ; i < 10; i++) {
+	/* infected cell are all above cell_type 'ill'
+	 * lets hope there is no infected cells above 100
+	 * the higher is the value, the more your computer will nee cumputing */
+	int lowest_infected_value = ill + 1;
+	for (int i = lowest_infected_value ; i < 100 ; i++) {
 		a += NB_AROUND(i);
 	}
 	b = NB_AROUND(ill);
