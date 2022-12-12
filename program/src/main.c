@@ -21,27 +21,10 @@
 		exit_msg(data, "[malloc_data] no malloc", -1);
 	data->window = malloc(sizeof(t_window));
 	if (!data)
-		exit_msg(data, "[malloc_data] no malloc", -1);
+		exit_msg(data, "[malloc_data] window did no malloc", -1);
 	data->window->size[W] = SCREEN_WIDTH;
 	data->window->size[H] = SCREEN_HEIGHT;
 	return (data);
-}
-
-int	is_border(t_data *data, t_point i)
-{
-	int	is_true;
-
-	if (i.x == 0)
-		is_true = WE;
-	else if	(i.y == 0)
-		is_true = NO;
-	else if (i.x == data->matrix_size[W] - 1)
-		is_true = EA;
-	else if (i.y == data->matrix_size[H] - 1)
-		is_true = SO;
-	else
-		is_true = FALSE;
-	return (is_true);
 }
 
 int	main(int argc, char *argv[])

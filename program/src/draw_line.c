@@ -7,6 +7,7 @@ int	overflow_image(int y, int x)
 	else
 		return 0;
 }
+
 void	my_mlx_pixel_put(t_image *img, int x, int y, unsigned int color)
 {
 	char	*dst;

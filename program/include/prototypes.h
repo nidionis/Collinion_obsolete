@@ -32,4 +32,7 @@ int	*convert_line_to_cell_line(t_data *data, char *line);
 void	init_matrix_size_post_import(t_data *data, int width);
 void	import_matrix(t_data *data, char *file_name);
 void	init_matrix(t_data *data, char *argv[]);
+/* matrix utils */
+t_point	init_point(int y, int x);
 int	matrixlen(int **matrix);
+void	free_matrix(int	***matrix);

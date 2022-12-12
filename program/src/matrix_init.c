@@ -11,18 +11,20 @@ int	**malloc_matrix(t_data *data)
 {
 	int	**matrix;
 	int	size[2];
+	int i;
 
 	size[W] = data->matrix_size[W];
 	size[H] = data->matrix_size[H];
-	matrix = malloc(size[H] * sizeof(int *));
+	matrix = malloc((size[H] + 1) * sizeof(int *));
 	if (!matrix)
 		exit_msg(data, "[random_matrix] did not malloc", 1);
-	for (int i = 0; i < size[H]; i++)
+	for (i = 0; i < size[H]; i++)
 	{
 		matrix[i] = malloc(size[W] * sizeof(int));
 		if (!matrix)
 			exit_msg(data, "[random_matrix] did not malloc", 1);
 	}
+	matrix[size[H]] = NULL;
 	return matrix;
 }
 
@@ -36,18 +38,14 @@ void	random_matrix(t_data *data)
 	init_matrix_size_from_macros(data);
 	matrix = malloc_matrix(data);
 	data->tmp_matrix = malloc_matrix(data);
-	for (i.y = 0; i.y < data->matrix_size[H]; i.y++)
-	{
-		for (i.x = 0; i.x < data->matrix_size[W]; i.x++)
-		{
+	for (i.y = 0; i.y < data->matrix_size[H]; i.y++) {
+		for (i.x = 0; i.x < data->matrix_size[W]; i.x++) {
 			border = is_border(data, i);
-			if (border)
-			{
+			if (border) {
 				matrix[i.y][i.x] = WALL;
 				data->tmp_matrix[i.y][i.x] = WALL;
 			}
-			else
-			{
+			else {
 				cell =  rand() % (int)NB_TYPES;
 				matrix[i.y][i.x] = cell;
 			}
@@ -58,7 +56,7 @@ void	random_matrix(t_data *data)
 
 int	**ft_append_tab(int **matrix, int *cell_line)
 {
-	int		tab_len;
+	int	tab_len;
 	int	**new_tab;
 
 	if (!cell_line)
@@ -125,22 +123,23 @@ void	import_matrix(t_data *data, char *file_name)
 		exit_msg(data, "[import_matrix] wrong file desctiptor", 1);
 	line = get_next_line(fd);
 	width = strlen(line);
-	while (line)
-	{
+	while (line) {
 		if (strlen(line) != width)
 			exit_msg(data, \
-			"[import_matrix] warning: lines have different lens\n\
-			trick: use an \'empy\' value wich does nothing\
-			or full some space with walls\
+	"[import_matrix] warning: lines have different lens\n\
+	make shure your map is a rectangle\n\
+	Full some space with a useless value ('z')\n\
 					", 1);
 		cell_line = convert_line_to_cell_line(data, line);
 		matrix = ft_append_tab(matrix, cell_line);
+		free(line);
 		line = get_next_line(fd);
 	}
+	if (line)
+		free(line);
 	data->matrix = matrix;
 	init_matrix_size_post_import(data, width);
 	data->tmp_matrix = malloc_matrix(data);
-	return ;
 }
 
 void	init_matrix(t_data *data, char *argv[])

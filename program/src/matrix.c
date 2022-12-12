@@ -12,27 +12,31 @@
 
 #include "collinion.h"
 
-int	matrixlen(int **matrix)
+/* This is the core of the program */
+void	refresh_matrix(t_data *data, int (*f)(int **, t_point))
 {
-	int	len;
+	int	**tmp;
+	int 	**matrix = data->matrix;
+	int 	**new_matrix = data->tmp_matrix;
 
-	len = 0;
-	if (matrix)
+	for (int y = 1; y < data->matrix_size[H] - 1; y++)
 	{
-		while (matrix[len])
-			len++;
+		for (int x = 1; x < data->matrix_size[W] - 1; x++)
+		{
+			new_matrix[y][x] = (*f)(matrix, init_point(y, x));
+		}
 	}
-	return (len);
+	tmp = matrix;
+	data->matrix = new_matrix;
+	data->tmp_matrix = tmp;
 }
 
 int	neighbourgh_count(int **matrix, t_point ind, int cell_search)
 {
 	int	nb = 0;
 
-	for (int y = ind.y - 1; y <= ind.y + 1; y++)
-	{
-		for (int x = ind.x - 1; x <= ind.x + 1; x++)
-		{
+	for (int y = ind.y - 1; y <= ind.y + 1; y++) {
+		for (int x = ind.x - 1; x <= ind.x + 1; x++) {
 			if (x == ind.x && y == ind.y)
 				continue ; // this is the cell itself
 			else if (matrix[y][x] == cell_search)
@@ -68,10 +72,8 @@ int	side_count(int **matrix, t_point ind, int cell_search, int side)
 			break ;
 	}
 	max = i_inc + 3;
-	while (i_inc < max)
-	{
-		if (side == SIDE_UP || side == SIDE_DOWN)
-		{
+	while (i_inc < max) {
+		if (side == SIDE_UP || side == SIDE_DOWN) {
 			if (matrix[i_fix][i_inc] == cell_search)
 				nb++;
 		} else {

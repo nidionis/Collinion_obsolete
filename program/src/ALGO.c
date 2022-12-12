@@ -11,25 +11,22 @@ END
 
 
 PRIME_ALGO
+	/* this algo is empty for now */
 END_ALGO
 
-/*
- * https://en.wikipedia.org/wiki/Brian%27s_Brain
- */
+
 
 ALGO
-
-int	alives_around = NB_AROUND(alive);
-
+/* declare variables at the beging of the algo
+ * above switch and below ALGO */
 switch(CELL) {
-	case (alive):
-		if ( !(alives_around == 2 || alives_around == 3) )
-			NEW_CELL = dead ;
+	default:
+		if (NB_AROUND(alive) < 2)
+			NEW_CELL = dead;
+		if (NB_AROUND(alive) > 3)
+			NEW_CELL = dead;
+		if (NB_AROUND(alive) == 3)
+			NEW_CELL = alive;
 		break;
-	case (dead):
-		if ( alives_around == 3 )
-			NEW_CELL = alive ;
-		break;
-	/* default is not even a must */
 }
 END_ALGO

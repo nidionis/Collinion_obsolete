@@ -12,33 +12,6 @@
 
 #include "../include/collinion.h"
 
-t_point	init_point(int y, int x)
-{
-	t_point p;
-
-	p.x = x;
-	p.y = y;
-	return (p);
-}
-
-void	refresh_matrix(t_data *data, int (*f)(int **, t_point))
-{
-	int	**tmp;
-	int 	**matrix = data->matrix;
-	int 	**new_matrix = data->tmp_matrix;
-
-	for (int y = 1; y < data->matrix_size[H] - 1; y++)
-	{
-		for (int x = 1; x < data->matrix_size[W] - 1; x++)
-		{
-			new_matrix[y][x] = (*f)(matrix, init_point(y, x));
-		}
-	}
-	tmp = matrix;
-	data->matrix = new_matrix;
-	data->tmp_matrix = tmp;
-}
-
 void	draw_pixel(t_data *data, t_point p, unsigned int color)
 {
 	int size = data->render.pix_size;
@@ -49,24 +22,6 @@ void	draw_pixel(t_data *data, t_point p, unsigned int color)
 		for (int x = init_pos.x; x < init_pos.x + size; x++)
 			my_mlx_pixel_put(&data->img, x, y, color);
 	}
-}
-
-void	print_matrix(int **matrix, int HEIGHT, int WIDTH)
-{
-	t_point	i_matrix = init_point(1, 1);
-	int	cell;
-
-	printf("   ###################################   \n");
-	for (i_matrix.y = 1; i_matrix.y < HEIGHT - 1; i_matrix.y++)
-	{
-		for (i_matrix.x = 1; i_matrix.x < WIDTH - 1; i_matrix.x++)
-		{
-			cell = matrix[i_matrix.y][i_matrix.x];
-			printf("|%d", cell);
-		}
-		printf("\n");
-	}
-	printf("   ###################################   \n");
 }
 
 void	draw_matrix(t_data *data)
@@ -94,7 +49,6 @@ int	refresh_image(t_data *data)
 {
 	refresh_matrix(data, apply_prime_rule);
 	refresh_matrix(data, apply_rule);
-	//print_matrix(data->matrix, data->matrix_size[H], data->matrix_size[W]);
 	draw_matrix(data);
 	usleep(1000 * SLEEP_TIME);
 	mlx_put_image_to_window(data->window->mlx, data->window->init, data->img.pointeur, 0, 0);
@@ -104,7 +58,7 @@ int	refresh_image(t_data *data)
 int	manage_keystroke(int keystroke, void *param)
 {
 	t_data	*data = (t_data *)param;
-	printf("keystroke %d\n", keystroke);	
+	//printf("keystroke %d\n", keystroke);	
 	if (keystroke == ECHAP)
 	{
 		mlx_destroy_window(data->window->mlx, data->window->init);
@@ -119,4 +73,36 @@ int	graphic_loop(t_data *data)
 	mlx_key_hook(data->window->init, manage_keystroke, data);
 	mlx_loop(data->window->mlx);
 	return (0);
+}
+
+int	window_init(t_data *data)
+{
+	t_window *window;
+
+	window = data->window;
+	window->mlx = mlx_init();
+	data->img.pointeur = mlx_new_image(window->mlx, window->size[W], window->size[H]);
+	window->init = mlx_new_window(window->mlx, \
+		window->size[W], window->size[H], "collinion");
+	data->img.address = mlx_get_data_addr(data->img.pointeur,&data->img.bpp, &data->img.line_len, &data->img.endian);
+	return (0);
+}
+
+/* was usefull for debuging */
+void	print_matrix(int **matrix, int HEIGHT, int WIDTH)
+{
+	t_point	i_matrix = init_point(1, 1);
+	int	cell;
+
+	printf("   ###################################   \n");
+	for (i_matrix.y = 1; i_matrix.y < HEIGHT - 1; i_matrix.y++)
+	{
+		for (i_matrix.x = 1; i_matrix.x < WIDTH - 1; i_matrix.x++)
+		{
+			cell = matrix[i_matrix.y][i_matrix.x];
+			printf("|%d", cell);
+		}
+		printf("\n");
+	}
+	printf("   ###################################   \n");
 }

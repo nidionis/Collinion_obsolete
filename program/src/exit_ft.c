@@ -14,9 +14,10 @@ void	clean_exit(t_data *data, int exit_code)
 
 	if (data)
 	{
-		//ft_free_matrix();
 		free(data->render.colors);
 		free(data->window);
+		free_matrix(&data->matrix);
+		free_matrix(&data->tmp_matrix);
 		free(data);
 	}
 	exit(exit_code);
