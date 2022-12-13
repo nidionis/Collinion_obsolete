@@ -2,10 +2,12 @@
 
 DECLARE_TYPE:	dead   ;
 DECLARE_TYPE:	alive;
+DECLARE_TYPE:	zombie;
 
 SET_COLORS
 	CELL_COLOR[alive] = WHITE;
 	CELL_COLOR[dead] = BLACK;
+	CELL_COLOR[zombie] = GREEN;
 END
 
 
@@ -33,7 +35,7 @@ switch(CELL) {
 		if (CELL == alive && NB_AROUND(zombie) >= NB_AROUND(alive)) {
 			NEW_CELL = zombie;
 		}
-		if (CELL == zombie && NB_AROUND(zombie) <= NB_AROUND(alive)) {
+		if (CELL == zombie && NB_AROUND(zombie) < NB_AROUND(alive)) {
 			NEW_CELL = dead;
 		}
 		break;

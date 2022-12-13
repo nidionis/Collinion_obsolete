@@ -10,7 +10,7 @@
 # define WALL (-1) 
 
 /* time waiting between each frames in milliseconds */
-# define SLEEP_TIME 	0
+# define SLEEP_TIME 	100
 
 /* COLORS are defined using RGB (Red Green Blue) in hexadecimal
  * some web sites can help 
