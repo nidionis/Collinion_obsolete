@@ -3,7 +3,7 @@
 # define SCREEN_WIDTH 	800
 # define SCREEN_HEIGHT 	600
 
-/* higher it is, lower is the quality*/
+/* higher it is, lower is the quality */
 # define PIX_PER_SQUARE 3
 
 /* Surrounding value (random map only) */

@@ -21,11 +21,17 @@ ALGO
  * above switch and below ALGO */
 switch(CELL) {
 	default:
-		if ((NB_SIDE_UP(alive) > 3) || (NB_SIDE_DOWN(alive) < 3)){
+		if ((NB_SIDE_UP(alive) == 1)) {
+			NEW_CELL = dead;
+		}
+		else if ((NB_SIDE_LEFT(alive) == 1)) {
+			NEW_CELL = dead;
+		}
+		else if ((NB_SIDE_DOWN(alive) == 1)) {
 			NEW_CELL = alive;
 		}
-		else if (NB_AROUND(alive) > 3) {
-			NEW_CELL = dead;
+		else if ((NB_SIDE_RIGHT(alive) == 1)) {
+			NEW_CELL = alive;
 		}
 		break;
 }
