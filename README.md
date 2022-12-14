@@ -20,7 +20,7 @@ Here some of his (musical) work:
 "run_collinion" is a shell script formating, compiling and executing the algo you wrote.
 
 download:
-    git clone git@github.com:presk0/collinion.git
+    git clone https://git@github.com/presk0/collinion.git
 
 go directory:
     cd collinion 
