@@ -20,17 +20,17 @@ Here some of his (musical) work:
 "run_collinion" is a shell script compiling and executing the algo you write.
 
 download:
-    git clone https://git@github.com/presk0/Collinion.git
+    - git clone https://git@github.com/presk0/Collinion.git
 
 go directory:
-    cd collinion 
+    - cd collinion 
 
 try it:
-              ./run_collinion game_of_life.c
+              - ./run_collinion game_of_life.c
 or
-              ./run_collinion example/<the_example_of_your_choice>
+              - ./run_collinion example/<the_example_of_your_choice>
 and even:
-              ./run_collinion <path_to_the_algo_you_made>
+              - ./run_collinion <path_to_the_algo_you_made>
 
 Drop your mouse and quit the window with ESC
 
