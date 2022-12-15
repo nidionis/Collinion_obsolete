@@ -26,11 +26,11 @@ go directory:
   - cd collinion 
 
 try it:
-  - ./run_collinion game_of_life.c
+  - ./run_collinion game_of_life.c\
 or
-  - ./run_collinion example/<the_example_of_your_choice>
+  - ./run_collinion example/<the_example_of_your_choice>\
 and even:
-  - ./run_collinion <path_to_the_algo_you_made>
+  - ./run_collinion <path_to_the_algo_you_made>\
 
 Drop your mouse and quit the window with ESC
 
