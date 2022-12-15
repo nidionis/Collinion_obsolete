@@ -1,19 +1,19 @@
 Welcome to collinion universe
 
-I guess you can't wait for a try, you can execute a file using "./" in front of it
-try in  terminal: 
+I guess you can't wait for a try, so you can execute a file using "./" in front of it.
+Try in  terminal: 
 	./run_collinion
 
 	----------------------------------------------------------
 
-But run_collinion is waiting for one (or two) argument !
+However run_collinion is waiting for one (or two) arguments !
 Try and enjoy:
 	./run_collinion game_of_life.c
 
 	|+| NoOb_n0te:
-	|+| From a terminal check where you are using "pwd"
-	|+| change your directory using "cd"
-	|+| list the directory using "ls"
+	|+| From a terminal check where you are using "pwd".
+	|+| Change your directory using "cd".
+	|+| List the directory using "ls".
 	|+| ex:
 	|+| > pwd
 	|+| 	/home/my_home
@@ -27,7 +27,7 @@ Try and enjoy:
 	|+| 	game_of_life.c	program		run_collinion
 	|+| then ./run_collinion game_of_life.c should work
 	|+| 
-	|+| At least, use a graphical interface,
+	|+| Otherwise, use a graphical interface,
 	|*| jump in the collinion folder
 	|*| click->right select "open in teminal" and finally:
 	|*| 	./run_collinion game_of_life.c
@@ -37,14 +37,14 @@ Try and enjoy:
 run_collinion use the algo written in the .c file (in pseudo-C syntaxe) and execute any algo you can create !
 
 Let's check "game_of_life.c" file
-you can use any text editor as gedit, nano, vim...
+you can use any text editor (gedit, nano, vim...)
 write:
 	gedit game_of_life.c
 	(or right-click and open with gedit)
 
 	----------------------------------------------------------
 
-Every words after // or between /* and */ are comments (never executes)
+Every words after // or between /* and */ are comments (not executed)
 
 There is 3 main parts in a collinion file:
 	- the cell declaration
@@ -76,7 +76,7 @@ Between the tags SET_COLORS and END, you MUST attribute a color to any cell you 
 			       don't forget the ';'
 
 Note:
-	- check the config.h file, it contains the already atributed colors and you can create your own
+	- check the config.h file, it contains the already attributed colors and you can create your own
 	- you can replace a cell_type, or the color directly with the corresponding number
 	- you can attribute the same color to several cells
 
@@ -87,31 +87,31 @@ Note:
 
 QUICK START WITH THE ALGO:
 
-The matrix is parse with your algo, creating a new matrix (the cells are not modified "in place")
+The matrix is parsed by your algo, creating a new matrix (the cells are not modified "in place")
 
-The algo is appled to each CELL in the matrix, and a NEW_CELL will be returned to the new matrix at the same position.
+The algo is applied to each CELL in the matrix, and a NEW_CELL will be returned to the new matrix in the same position.
 
-If the CELL does not correspond to any rule, NEW_CELL is equal to CELL
+If the CELL does not correspond to any rule, NEW_CELL will be equal to CELL
 
 We are using a C syntax (https://www.w3schools.com/c/c_conditions.php)
 
-Basicly, it works that way:
+Basically, it works that way:
 
 	if ( condition ) { action } ;
 
 We can use:
 	>  (GREATER)	>= (GREATER OR EQUAL)
-	<  (LOWER)	<= (LOWER OR EQUAL)
-	== (EQUAL)	! (NOT NULL)
-	&& (AND)	|| (OR)
+	<  (LOWER)		<= (LOWER OR EQUAL)
+	== (EQUAL)		! (NOT NULL)
+	&& (AND)		|| (OR)
 
 We will learn much more in the next tutorial, for now we can play around just by guessing.
 
 Between "default:" and "break;" feel free to modify the rules and don't forget : you declared a new type :)
 
 ex try:
-	- if CELL is alive and there is more zombies around,
-		the cell become a zombie
-	- if the cell is a zombie and there is more alives around
+	- if CELL is alive and there are more zombies around,
+		the cell becomes a zombie
+	- if the cell is a zombie and there are more living cells around
 		the zombie is killed
 

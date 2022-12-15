@@ -1,6 +1,6 @@
-You get bored of random map you cannot handle ?
+Do you get bored of random maps you cannot handle ?
 
-run_collinion take a map file as second argument, and will scale the pixels with the screen size (you can change these values in the config.h file)
+run_collinion takes a map file as its second argument, and scales the pixels with the screen size (you can change these values in the config.h file)
 
 Try 
 	./run_collinion game_of_life.c examples/_03_map.txt
@@ -9,21 +9,21 @@ Try
 The map is a text file, containing one pixel per character.
 The first cell_type is '0', the second is '1' and so on...
 
-The map MUST be a rectangle (sorry about that ?) and the surrounding cell will never be modified, you can appreciate that as cells generator patterns, depending of your rules :)
+The map MUST be a rectangle and the surrounding cell frame (i.e. the outer line of numbers in the matrix) will never be modified.
+It means you can use "external" cell patterns that won't be modified.
 
-If you just need a basic (surrounding ?) wall, you can use a letter you will not use : 'z' is far away enough
+If you just need a basic (surrounding ?) wall, you can use a letter you will not use : 'z' is far away enough.
 You can even make a labyrinth, and who knows what idea you can have
 
 If you want to use more than 10 cell_types, or hack the program attributing values to your cell (yes you can), you need to know : the values are affected to the matrix following the ASCII tab
 (https://en.wikipedia.org/wiki/ASCII)
-Basicly, after '8' and '9' comes ':' ';' '<' '=' '>' '?' '@' 'A' 'B' 'C' ....
+Basically, after '8' and '9' comes ':' ';' '<' '=' '>' '?' '@' 'A' 'B' 'C' .... (in terminal: man ascii)
 
 
 Just in case:
 	You can use ".." to reach the parent folder
 		cd ..
-	If you are in the tutorial folder, can use
+	If you are in the tutorial folder, you can use:
 		../run_collinion ../game_of_life.c ../example/_03_map.txt
 
-	And 'tab' autocompete the filename and can even be used as ls
-	Maybe you can appreciate the terminal thanks to Tab
+	And 'tab' completes the filenames, and list the folder.

@@ -1,14 +1,15 @@
-If you want to define a default cell (like: any cell_type above 1 is infeted) you can :
+If you want to define a default cell (like: any cell_type above 1 is infected) you can :
 - attribute a default color using DEFAULT_COLOR as :
 	CELL_COLOR[DEFAULT_COLOR] = <a_color> ;
-- and do not declare the cell_type;
-- and refresh the default type with the "default:" switch rule
+- not declare the cell_type;
+- refresh the default type with the "default:" switch rule.
 
-Notice that the WALL value is a part of defaulf cell, it's time to change it's value from the 'config.h' file becuse -1 can be buggy ! (maybe #DEFINE WALL 0 ?)
+Notice that the WALL value is a part of default cell.
+It's time to change its value from the 'config.h' file because -1 can be buggy ! (maybe #DEFINE WALL 0 ?)
 
 	-----------------------------------------
 
-By the way, programming languages allows you to use some loop statements, a cool one is the "for" loop:
+By the way, programming languages allow you to use some loop statements, a cool one is the "for" loop:
 
 https://www.w3schools.com/c/c_for_loop.php
 
@@ -25,11 +26,13 @@ for (int i = 0; i < i_max; i += 1) {
 	I_will_be_multiplied_by_1000 *= 10 ;	
 }
 
-And a cool stuff in C syntax:
-			a =  a + 1;	
+And a cool thing in C syntax:
+
+					a =  a + 1;	
 can be written		a += 1;
-and even		a++;
-or			++a;
+and even			a++;
+or					++a;
+
 In the last case, the value of a will be increment with the hihest priority, if you want to know more:
 https://www.tutorialspoint.com/what-is-the-difference-between-plusplusi-and-iplusplus-in-c
 

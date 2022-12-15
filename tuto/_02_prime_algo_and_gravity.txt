@@ -1,16 +1,16 @@
-A prime algo ? What for ?
+A PRIME_ALGO ? What for ?
 
-Our program "switch" any cell into a new one and refresh the picture with the new matrix.
-Maybe you would love give priority to some rules !
+Our program "switches" any cell to a new one and updates the picture with the new matrix.
+Maybe you would love to give priority to some rules !
 
 Using PRIME_ALGO is the way to do that.
-It works exactly the same way of ALGO, and ALGO will refresh the matrix produced by PRIME_ALGO
+It works exactly in the same way of ALGO, and ALGO will update the matrix produced by PRIME_ALGO.
 
-Let's try to implement a gravity to our game of life !
-And why not : lets give priority to gravity
+Let's try to implement gravity in our game of life !
+And why not : let's give priority to gravity
 
 How would you do that ?
-(I consider each alive drop one pixel each refresh)
+(I consider each living cell ("alive") drops by one pixel each update)
 
 Open game_of_life, copy-paste between PRIME_ALGO and END_ALGO tags:
 

@@ -1,8 +1,8 @@
-rand() is a function delivered by C language
+rand() is a function taken from C language.
 
-It return a (pseudo-)random number, from 0 to an high value (at least 32767, check "man 3 rand")
+It returns a random number, from 0 to an high value (at least 32767, check "man 3 rand")
 
-Let's say your cells make children and you want them randomly male or female, the trick is using the modulo operator (what left in a division)
+Let's say your cells make children and you want them randomly male or female, the trick is using the modulo operator (what is left in a division)
 
 3 % 2 = 1
 4 % 2 = 0
@@ -14,13 +14,13 @@ if (rand() % 2 == 0) {
 	NEW_CELL = female ;
 }
 
-if you define male and female at the top of cells declaration, you can even write:
+If you define male and female at the top of cell's declaration (them value are 0 and 1), you can even write:
 
 NEW_CELL = rand() % 2 ;
 
-if you defined them anywhere else, but female (or male) next to male (or female):
+If you defined them anywhere else, but female (or male) next to male (or female):
 
 NEW_CELL = (rand() % 2) + male ;
-(or NEW_CELL = (rand() % 2) + female ; )
+(or:	NEW_CELL = (rand() % 2) + female ; )
 
 Have fun with this new tool !

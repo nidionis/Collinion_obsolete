@@ -17,10 +17,10 @@ Here some of his (musical) work:
   - Own Blow
     https://www.youtube.com/channel/UCsQjYpATXG1AHtzDS2i60Gg
 
-"run_collinion" is a shell script formating, compiling and executing the algo you wrote.
+"run_collinion" is a shell script compiling and executing the algo you wrote.
 
 download:
-    git clone https://git@github.com/presk0/collinion.git
+    git clone https://git@github.com/presk0/Collinion.git
 
 go directory:
     cd collinion 
@@ -30,7 +30,7 @@ try it:
 or            ./run_collinion example/<the_example_of_your_choice> \
 and even:     ./run_collinion <path_to_the_algo_you_made>
 
-note: give up with your mouse and quit the window with ESC
+note: drop your mouse and quit the window with ESC
 
 Check the folder "tuto" if you want to discover more.
 
