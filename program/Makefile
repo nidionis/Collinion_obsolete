@@ -16,7 +16,8 @@ PROJECT_H	= $(INCLUDEDIR)/collinion.h
 PROJECT_H	+= $(MLX_H)
 CC		= gcc
 LINKER   	= gcc
-CFLAGS		= -Wall -Wextra -Werror -g3
+CFLAGS		=
+#-Wall -Wextra -Werror -g3
 
 MINILIBX = minilibx_linux
 MLXFLAGS = -I /usr/X11/include -g -Lminilibx_linux -L /usr/lib -Iminilibx_linux -lmlx -lXext -lX11 -lm
@@ -24,11 +25,11 @@ MLXFLAGS = -I /usr/X11/include -g -Lminilibx_linux -L /usr/lib -Iminilibx_linux 
 all: $(NAME)
 
 $(NAME): $(OBJECTS) maker
-	$(CC) $(OBJECTS) $(CFLAGS) ${MLXFLAGS} ./$(MINILIBX)/libmlx.a -o $(NAME) 
+	@$(CC) $(OBJECTS) $(CFLAGS) -I .. -I . ${MLXFLAGS} ./$(MINILIBX)/libmlx.a -o $(NAME) 
 
 $(OBJECTS): $(OBJDIR)/%.o : $(SRCDIR)/%.c
 	@mkdir -p $(OBJDIR)
-	@$(CC) $(CFLAGS) -I/usr/include -I.. -I./$(INCLUDEDIR) -I$(MINILIBX) -O0 -c $< -o $@
+	@$(CC) $(CFLAGS) -I/usr/include -I .. -I . -I./$(INCLUDEDIR) -I$(MINILIBX) -O0 -c $< -o $@
 
 maker:
 	@make -C ./$(MINILIBX)
@@ -36,7 +37,7 @@ maker:
 algo:
 	@rm -rf $(NAME)
 	@rm -rf $(OBJDIR)
-	make
+	@make
 
 clean:
 	@make -C ./$(MINILIBX) clean

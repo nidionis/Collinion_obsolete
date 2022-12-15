@@ -4,11 +4,11 @@
 //MACROS 
 #  define ECHAP 	65307 //echap
 
+# include <config.h>
 # include <stdlib.h>
 # include "structures.h"
 # include "prototypes.h"
 # include "cheaty_defines.h"
-# include "../../config.h"
 # include "cell_types.h"
 # include "mlx.h"
 # include <unistd.h>
