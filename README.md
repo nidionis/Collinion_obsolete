@@ -25,14 +25,12 @@ download:
 go directory:
     cd collinion 
 
-compile:
-    make
-
 try it:
-    ./run_collinion game_of_life.c
+              ./run_collinion game_of_life.c
+or            ./run_collinion example/<the_example_of_your_choice>
+and even:     ./run_collinion <path_to_the_algo_you_made>
 
 note: give up with your mouse and quit the window with ESC
-
 
 Check the folder "tuto" if you want to discover more.
 
