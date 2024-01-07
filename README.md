@@ -17,6 +17,12 @@ Here some of his (musical) work:
   - Own Blow
     https://www.youtube.com/channel/UCsQjYpATXG1AHtzDS2i60Gg
 
+dependencies : make, gcc, libX
+  sudo apt install make
+  sudo apt install gcc
+  sudo apt install libx11-dev
+  sudo apt-get install libxext-dev
+
 "run_collinion" is a shell script compiling and executing the algo you write.
 
 download:
