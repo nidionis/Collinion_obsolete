@@ -9,7 +9,7 @@ fi
 
 ALGO_FILE="$PWD/$1"
 MAP_FILE="$PWD/$2"
-MAIN_FOLDER="$HOME/Collinion"
+MAIN_FOLDER=$(find $HOME -name  Collinion 2>/dev/null)
 PROGRAM_FOLDER="$MAIN_FOLDER/program"
 FORMATED_ALGO="$PROGRAM_FOLDER/src/ALGO.c"
 CELL_TYPE_FILE="$PROGRAM_FOLDER/include/cell_types.h"
