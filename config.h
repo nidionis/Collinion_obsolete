@@ -21,7 +21,7 @@
 #define BROWN	(0xA52A2A)
 #define GREEN	(0x008000)
 #define GRAY	(0x808080)
-#define RED	(0xFF0000)
+#define RED     (0xFF0000)
 #define BLUE	(0x0000FF)
 #define YELLOW	(0xFFFF00)
 #define PURPLE	(0x800080)
