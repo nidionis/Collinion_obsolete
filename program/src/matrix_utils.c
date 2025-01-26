@@ -1,12 +1,8 @@
 #include <collinion.h>
 
-t_point	init_point(int y, int x)
+t_point	init_point(int x, int y)
 {
-	t_point p;
-
-	p.x = x;
-	p.y = y;
-	return (p);
+	return (t_point){x, y};
 }
 
 int	is_border(t_data *data, t_point i)

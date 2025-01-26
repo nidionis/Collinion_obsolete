@@ -10,9 +10,9 @@ END
 
 
 
-PRIME_ALGO
-	/* this algo is empty for now */
-END_ALGO
+//PRIME_ALGO
+//	/* this algo is empty for now */
+//END_ALGO
 
 
 

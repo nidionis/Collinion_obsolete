@@ -13,6 +13,7 @@
 #define CELL_COLOR render->colors
 #define SET_COLORS void	init_colors(t_render *render) {\
 	render->colors = malloc(sizeof(int) * NB_TYPES + 1);
+
 #define END }
 
 #define PRIME_ALGO int	apply_prime_rule(int **matrix, t_point ind )\
