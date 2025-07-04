@@ -1,4 +1,11 @@
-# collinion
+# this version is obsolete -> you probably want this one: https://github.com/nidionis/collinion
+/!\ Trying to install it can be an hell
+Left because can be reused for learning C syntax but:
+- Using an horrible mlx
+- the algo is set using an awk script (this is an hell to debug)
+- only on a linux (debian or ubuntu)
+- Installation process not automatized
+  -you may have to install libraries by your own 
 
 A cellular automaton/simulator generator
 Make your own fancy game of life
